@@ -1,3 +1,3 @@
 # Image in readme
 
-![](images/assets/img/casamoderna.jpg)
+![](public/assets/img/casamoderna.jpg)
