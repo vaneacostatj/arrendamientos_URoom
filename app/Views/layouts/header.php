@@ -32,8 +32,14 @@
             <li><a class="dropdown-item" href="#">Urban</a></li>
             </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Register</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Resgister
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">User register</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url(); ?>/public/addProperty.php">property registration</a></li>
+            </ul>
         </li>
       </ul>
       <form class="d-flex">

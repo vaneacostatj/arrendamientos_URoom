@@ -1,6 +1,6 @@
-<footer class="footer mt-auto py-3 bg-light">
+<footer class="footer mt-auto py-3 bg-light " >
   <div class="container">
-    <span class="text-muted">Web developed by Steven Torres and Vanessa Acosta</span>
+    <span class="text-muted ">Web developed by Steven Torres and Vanessa Acosta</span>
   </div>
 </footer>
 

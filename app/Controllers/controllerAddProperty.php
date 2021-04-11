@@ -2,12 +2,12 @@
 
 namespace App\Controllers;
 
-class Home extends BaseController
+class controllerAddProperty extends BaseController
 {
 	public function index()
 	{
 		echo view('layouts/header');
-		echo view('home');
+		echo view('addProperty');
 		echo view('layouts/footer');
 	}
 }
