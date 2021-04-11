@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="fondo">
     <row>
         <form class="row g-3 needs-validation" novalidate>
             <div class="col-md-4">
