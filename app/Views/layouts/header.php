@@ -39,7 +39,11 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">User register</a></li>
+<<<<<<< HEAD
+            <li><a class="dropdown-item" href="<?php echo base_url(); ?>/public/addProperty.php">property registration</a></li>
+=======
             <li><a class="dropdown-item" href="#">property registration</a></li>
+>>>>>>> a3b95f4ccc6cbb49b8903f43e1b99bbe3d261e5c
             </ul>
         </li>
       </ul>
