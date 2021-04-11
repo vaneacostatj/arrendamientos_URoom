@@ -1,7 +1,9 @@
+<div class="" id="fondoProperty">
 <div class="container">
     <div class="row">
-    <form class="row g-3">
-  <div class="col-md-6">
+    
+    <form class="row g-3"  onsubmit="return validateProperty();">
+  <div class="col-md-6">    
     <label for="inputCity" class="form-label">City</label>
     <input type="text" class="form-control" id="inputCity">
   </div>
@@ -14,24 +16,24 @@
     <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
   </div>
   <div class="col-md-2">
-    <label for="inputZip" class="form-label">Number of Rooms</label>
-    <input type="text" class="form-control" id="inputZip">
+    <label for="inputRooms" class="form-label">Number of Rooms</label>
+    <input type="text" class="form-control" id="inputRooms">
   </div>
   <div class="col-md-2">
-    <label for="inputZip" class="form-label">Number of Bathrooms</label>
-    <input type="text" class="form-control" id="inputZip">
+    <label for="inputBathrooms" class="form-label">Number of Bathrooms</label>
+    <input type="text" class="form-control" id="inputBathrooms">
   </div>
   <div class="col-md-3">
-    <label for="inputState" class="form-label">Wet Area</label>
-    <select id="inputState" class="form-select">
+    <label for="inputWetArea" class="form-label">Wet Area</label>
+    <select id="inputWetArea" class="form-select">
       <option selected>Choose...</option>
       <option>Yes</option>
       <option>No</option>
     </select>
   </div>
   <div class="col-md-3">
-    <label for="inputState" class="form-label">Gas Network</label>
-    <select id="inputState" class="form-select">
+    <label for="inputGas" class="form-label">Gas Network</label>
+    <select id="inputGas" class="form-select">
       <option selected>Choose...</option>
       <option>Yes</option>
       <option>No</option>
@@ -50,8 +52,8 @@
     <input type="text" class="form-control" id="inputValue">
   </div>
   <div class="mb-3">
-  <label for="formFileMultiple" class="form-label">Multiple files input example</label>
-  <input class="form-control" type="file" id="formFileMultiple" multiple>
+  <label for="formFileMultiple" class="form-label">Upload the photos of the property</label>
+  <input class="form-control" type="file" id="photos" multiple>
 </div>
   </div>
  
@@ -64,8 +66,10 @@
     </div>
   </div>
   <div class="col-12">
-    <button type="submit" class="btn btn-outline-warning">Resgister</button>
+    <button type="submit" class="btn btn-dark">Resgister</button>
   </div>
 </form>
+
     </div>
+</div>
 </div>
