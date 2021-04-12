@@ -23,5 +23,6 @@
   }
 
 #banner{
-    min-height: 100vh;
+    width: 30%;
+    height: 100%
   }
