@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("form").addEventListener('submit', validateForm);
 });
 
-const inputs = document.querySelectorAll('form input');
+const inputs = document.querySelectorAll('form.input');
 
 const expressions = {
 	user: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -19,37 +19,43 @@ function validateForm(event){
     if(firstname.length == 0) {
         alert("The input fields must not be empty")
         document.forms.firstname.focus();
+        return;
     }
     else
         if(expressions.name()){
             alert("The input fields must not have other charaters")
             document.forms.lastname.focus();
+            return;
         }
-        return;
+        
 
     let lastname = document.getElementById('lastname').value;
     if(lastname.length == 0) {
         alert("The input fields must not be empty")
         document.forms.lastname.focus();
+        return;
     }
     else
         if(expressions.name()){
             alert("The input fields must not have other charaters")
             document.forms.lastname.focus();
+            return;
         }
-        return;
+        
 
     let email = document.getElementById('email').value;
     if(email.length == 0) {
         alert("The input fields must not be empty")
         document.forms.email.focus();
+        return;
     }
     else
         if(expressions.email()){
             alert("The input fields must not have other charaters")
             document.forms.email.focus();
+            return;
         }
-        return;
+        
 
     let country = document.getElementById('country').value;
     if(country.length == 0) {
@@ -83,12 +89,14 @@ function validateForm(event){
     if(password.length < 6){
         alert('The input fields must not be empty')
         document.forms.password.focus();
+        return;
     }
     else
         if(expressions.password()){
             alert("The input fields must not have other charaters")
             document.forms.password.focus();
+            return;
         }
-        return;
+        
     this.submit();
 }

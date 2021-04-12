@@ -1,7 +1,7 @@
 
 
-<<<<<<< HEAD
-body{
+
+#form{
      background-image: url("https://i.imgur.com/3tBiOjL.jpg");
      width: 100%;
      background-repeat: no-repeat;
@@ -9,12 +9,7 @@ body{
  }
 
  .container{
-    min-height: calc(100vh - 100px - 300px);
- }
-=======
- #fondo{
-     background-image: url("https://i.imgur.com/3pfQlJM.jpg");
-     height: 500px;
+    min-height: calc(100vh - 100px - 120px);
  }
 
 
@@ -27,5 +22,6 @@ body{
         
   }
 
- 
->>>>>>> 13b2a14144bb7aad886fde54f0e99d56d217cf93
+#banner{
+    min-height: 100vh;
+  }

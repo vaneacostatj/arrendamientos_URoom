@@ -38,11 +38,11 @@
             Resgister
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">User register</a></li>
+            <li><a class="dropdown-item" href="register.php">User register</a></li>
 
-            <li><a class="dropdown-item" href="<?php echo base_url(); ?>/public/addProperty.php">property registration</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url(); ?>addProperty.php">property registration</a></li>
 
-            <li><a class="dropdown-item" href="#">property registration</a></li>
+            <li><a class="dropdown-item" href="#">Home</a></li>
 
             </ul>
         </li>
