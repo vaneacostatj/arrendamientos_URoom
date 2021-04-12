@@ -1,6 +1,12 @@
 
 
- #fondo{
-     background-image: url("https://i.imgur.com/3pfQlJM.jpg");
-     height: 500px;
+body{
+     background-image: url("https://i.imgur.com/3tBiOjL.jpg");
+     width: 100%;
+     background-repeat: no-repeat;
+     color: #fff
+ }
+
+ .container{
+    min-height: calc(100vh - 100px - 300px);
  }
