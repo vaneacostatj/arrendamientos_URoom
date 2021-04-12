@@ -1,5 +1,6 @@
 
 
+<<<<<<< HEAD
 body{
      background-image: url("https://i.imgur.com/3tBiOjL.jpg");
      width: 100%;
@@ -10,3 +11,21 @@ body{
  .container{
     min-height: calc(100vh - 100px - 300px);
  }
+=======
+ #fondo{
+     background-image: url("https://i.imgur.com/3pfQlJM.jpg");
+     height: 500px;
+ }
+
+
+#fondoProperty {    
+    background: url("https://i.imgur.com/OdpEGTz.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+        
+  }
+
+ 
+>>>>>>> 13b2a14144bb7aad886fde54f0e99d56d217cf93
