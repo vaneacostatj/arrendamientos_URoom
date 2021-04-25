@@ -1,4 +1,5 @@
 function validateProperty(){
+    let Document = document.getElementById('inputDocument').value;
     let city = document.getElementById('inputCity').value;
     let country = document.getElementById('inputCountry').value;
     let Address = document.getElementById('inputAddress').value;
@@ -13,6 +14,10 @@ function validateProperty(){
 
 
    
+    if(Document === ""){
+        alert("must fill the field Document")
+        return false;
+    }
     if(city === ""){
         alert("must fill the field city")
         return false;

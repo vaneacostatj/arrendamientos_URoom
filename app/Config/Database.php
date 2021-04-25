@@ -32,10 +32,11 @@ class Database extends Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'localhost',
-		'username' => '',
+		//'hostname' => '192.168.1.55/phpmyadmin',
+		'hostname' => '192.168.0.14/phpmyadmin',
+		'username' => 'root',
 		'password' => '',
-		'database' => '',
+		'database' => 'uroom',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,
