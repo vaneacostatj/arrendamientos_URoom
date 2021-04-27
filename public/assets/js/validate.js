@@ -7,7 +7,7 @@ function validateProperty(){
     let Bathrooms = document.getElementById('inputBathrooms').value;
     let WetArea = document.getElementById('inputWetArea').value;
     let Gas = document.getElementById('inputGas').value;
-    let Zip = document.getElementById('inputZip').value;
+    let Transport = document.getElementById('inputTransport').value;
     let Location = document.getElementById('inputLocation').value;
     let Value = document.getElementById('inputValue').value;
     let photos = document.getElementById('photos').value;
@@ -46,8 +46,8 @@ function validateProperty(){
         alert("must fill the field Gas")
         return false;
     }
-    if(Zip === "" ){
-        alert("must fill the field Zip")
+    if(Transport === "" ){
+        alert("must fill the field Transport")
         return false;
     }
     if(Location === "" ){

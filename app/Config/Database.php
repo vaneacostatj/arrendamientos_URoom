@@ -32,8 +32,7 @@ class Database extends Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		//'hostname' => '192.168.1.55/phpmyadmin',
-		'hostname' => '192.168.0.14/phpmyadmin',
+		'hostname' => 'localhost',
 		'username' => 'root',
 		'password' => '',
 		'database' => 'uroom',

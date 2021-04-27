@@ -35,6 +35,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/addProperty', 'controllerAddProperty::index');
 $routes->get('/register', 'registerController::index');
+$routes->get('/addProperty/create', 'controllerAddProperty::index');
 
 /*
  * --------------------------------------------------------------------
