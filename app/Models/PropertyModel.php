@@ -8,20 +8,7 @@ class PropertyModel extends Model
 {
     function addProperty(){
 
-        //$document = $_POST['Document'];
-        //$city = $_POST['City'];
-        //$country = $_POST['Country'];
-        //$address = $_POST['Address'];
-        //$rooms = $_POST['Rooms'];
-        //$bathrooms = $_POST['Bathrooms'];
-        //$area = $_POST['Area'];
-        //$gas = $_POST['Gas'];
-       // $transport = $_POST['Transport'];
-        //$location = $_POST['Location'];
-        //$value = $_POST['Value'];
-       // $photos = $_POST['photos'];
-       
-
+        
         $document ="ñkjcknzd";
         $city = "kfkzv";
         $country ="zjsdnfznv";
