@@ -9,20 +9,21 @@ class controllerAddProperty extends BaseController
 	{	
 		$taskproperty = new PropertyModel();
 	
-		$resultTasksproperty = $taskproperty->readtask();
+		$resultTasksproperty = $taskproperty->readproperty();
 
 		$data =array(
-			"tasks"=>$resultTasksproperty,
+			"createproperty"=>$resultTasksproperty,
 			
 		);
 
 		echo view('layouts/header');
-		echo view('addProperty', $data);
+		echo view('vwProperty', $data);
 		echo view('layouts/footer');
 	}
+
 	public function viewProperty(){
 		echo view('layouts/header');
-		echo view('create_task_view');
+		echo view('addProperty');
 		echo view('layouts/footer');
 	}
 
@@ -30,6 +31,8 @@ class controllerAddProperty extends BaseController
 	public function create(){
 
 		$request = \Config\Services::request();
+		$propertyModel = new PropertyModel();
+
 		$document = $request-> getPost('Document');
         $city = $request-> getPost('City');
         $country = $request-> getPost('Country');
@@ -43,7 +46,8 @@ class controllerAddProperty extends BaseController
         $value = $request-> getPost('Value');
         $photos = $request-> getPost('photos');
 
-		return redirect()->to('addProperty');
+		$propertyModel->addProperty($document, $city, $country, $address, $rooms, $bathrooms, $area, $gas, $transport, $location, $value, $photos);
+		return redirect()->to('/public/addProperty');
 		
 	}
 
