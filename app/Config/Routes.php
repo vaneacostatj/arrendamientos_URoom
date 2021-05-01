@@ -36,7 +36,9 @@ $routes->get('/', 'Home::index');
 $routes->get('/addProperty', 'controllerAddProperty::index');
 $routes->get('/register', 'registerController::index');
 $routes->get('addProperty/viewProperty', 'controllerAddProperty::viewProperty');
+$routes->get('register/viewRegister', 'registerController::viewRegister');
 $routes->post('/create', 'controllerAddProperty::create');
+$routes->post('/createReg', 'registerController::createReg');
 
 /*
  * --------------------------------------------------------------------

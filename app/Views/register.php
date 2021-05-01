@@ -1,7 +1,7 @@
 <div class="form" id="form">
 <br><br><br><br><br>
-    <div class="container" id="form">
-        <form class="row g-3 needs-validation" action="" method="post" id="form-validate">
+    <div class="container" id="form2">
+        <form class="row g-3 needs-validation" action="<?php echo base_url().'/public/createReg'?>" method="post" id="form-validate">
             <div class="col-md-4 grupo-input">
                 <label for="firstname" class="form-label">First name</label>
                 <input type="text" class="form-control form-input" id="firstname" value="" name="firstname" placeholder="Enter your name" title="Only letters and blanks">
