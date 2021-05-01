@@ -119,36 +119,10 @@ function validateForm(event) {
         return;
     }
 
-    if(checkbox != document.getElementById('check').checked) {
+    /* if(checkbox != document.getElementById('check').checked) {
         alert('The checkbox fields has not selected')
         return;
-    }
+    } */
 
     this.submit();
 }
-
-
-/* inputs.forEach((input)=>{
-    input.addEventListener('keyup', validateForm);
-    input.addEventListener('blur', validateForm);
-}); */
-
-
-/* export default function containerValidations(){
-    const $form = document.querySelector(".container"),
-    $inputs = document.querySelectorAll(".container[required]");
-
-    console.log($inputs);
-
-    $inputs.forEach((input)=>{
-        const $span = document.createElement("span");
-        $span.id = input.name;
-        $span.textContent = input.title;
-        $span.classList.add("contact-form-error", "none");
-        input.insertAdjacentElement("afterend", $span);
-    });
-
-    document.addEventListener("keyup",(e) = > {
-        if(e.target.matches(".con"))
-    })
-} */

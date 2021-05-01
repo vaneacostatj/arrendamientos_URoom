@@ -46,12 +46,7 @@ class controllerAddProperty extends BaseController
         $value = $request-> getPost('Value');
         $photos = $request-> getPost('photos');
 
-<<<<<<< HEAD
 
-		//return redirect()->to('/addProperty');
-=======
-	//	return redirect()->to('/addProperty');
->>>>>>> aa66212956a9c642a5aa25df0fd330012ca61e0b
 
 		$propertyModel->addProperty($document, $city, $country, $address, $rooms, $bathrooms, $area, $gas, $transport, $location, $value, $photos);
 		return redirect()->to('/public/addProperty');
