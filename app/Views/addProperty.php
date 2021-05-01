@@ -59,11 +59,11 @@
     <label for="inputValue" class="form-label">Value</label>
     <input type="text" class="form-control" name="Value" id="inputValue">
   </div>
-  <div class="mb-3">
-  <label for="formFileMultiple" class="form-label">Upload the photos of the property</label>
-  <input class="form-control" type="file" name="photos" id="photos" multiple>
-</div>
+  <div class="col-md-6">
+    <label for="inputphotos" class="form-label">Upload the photos of the property</label>
+    <input type="text" class="form-control" name="photos" id="photos">
   </div>
+  
  
   <div class="col-12">
     <div class="form-check">
