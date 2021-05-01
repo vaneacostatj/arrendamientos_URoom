@@ -22,7 +22,7 @@ class controllerAddProperty extends BaseController
 	}
 	public function viewProperty(){
 		echo view('layouts/header');
-		echo view('create_task_view');
+		echo view('addProperty');
 		echo view('layouts/footer');
 	}
 
@@ -43,7 +43,7 @@ class controllerAddProperty extends BaseController
         $value = $request-> getPost('Value');
         $photos = $request-> getPost('photos');
 
-		return redirect()->to('addProperty');
+		return redirect()->to('/addProperty');
 		
 	}
 

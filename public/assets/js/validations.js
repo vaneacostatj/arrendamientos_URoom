@@ -21,7 +21,7 @@ function validateForm(event) {
         document.form-validate.firstname.focus();
         return;
     } else
-    if (firstname.length == expressions.name.test()) {
+    if (firstname.length != expressions.name.test()) {
         alert("The firstname field must not have other charaters")
         document.form-validate.lastname.focus();
         return;
