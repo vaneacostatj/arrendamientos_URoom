@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
     
-    <form class="row g-3" action="../public/create" method="POST"  onsubmit="return validateProperty();">
+    <form class="row g-3" action="<?php echo base_url().'/public/create'?>" method="POST"  onsubmit="return validateProperty();">
   <div class="col-md-4">    
     <label for="inputDocument" class="form-label">Identification Document</label>
     <input type="text" class="form-control" name="Document" id="inputDocument">
@@ -59,11 +59,11 @@
     <label for="inputValue" class="form-label">Value</label>
     <input type="text" class="form-control" name="Value" id="inputValue">
   </div>
-  <div class="mb-3">
-  <label for="formFileMultiple" class="form-label">Upload the photos of the property</label>
-  <input class="form-control" type="file" name="photos" id="photos" multiple>
-</div>
+  <div class="col-md-6">
+    <label for="inputphotos" class="form-label">Upload the photos of the property</label>
+    <input type="text" class="form-control" name="photos" id="photos">
   </div>
+  
  
   <div class="col-12">
     <div class="form-check">

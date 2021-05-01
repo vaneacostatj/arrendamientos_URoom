@@ -23,7 +23,7 @@ class App extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $baseURL = 'http://localhost:80/Arrendamientos/URoom/public';
+	public $baseURL = 'http://localhost:80/Arredamientos/URoom';
 
 	/**
 	 * --------------------------------------------------------------------------
