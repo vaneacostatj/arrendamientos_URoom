@@ -20,6 +20,10 @@ class PropertyModel extends Model
         return $propertyList->getResult();
     }
    
+    function deleteProperty($id){
+        $sql="DELETE FROM createproperty WHERE ID={$id}";
+        $this->db->query($sql);
+    }
 
     // ...
 }

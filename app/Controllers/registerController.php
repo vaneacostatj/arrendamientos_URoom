@@ -8,7 +8,7 @@
 	 {	
 		 $taskRegister = new modelRegister();
 	 
-		 $resultTasksRegister = $taskRegister->readproperty();
+		 $resultTasksRegister = $taskRegister->readRegister();
  
 		 $data =array(
 			 "createRegister"=>$resultTasksRegister,
@@ -50,4 +50,15 @@
  
 		 
 	 }
-  }
+
+	 public function deleteRegister(){
+		$modelRegister = new modelRegister();
+		$request = \Config\Services::request();
+		$id= $request->getGet('id');
+		$modelRegister->deleteRegister($id);
+		return redirect()->to('/public/register');
+
+		//echo "ID: {$id}";
+	}
+}
+  

@@ -54,4 +54,13 @@ class controllerAddProperty extends BaseController
 		
 	}
 
+	public function deleteProperty(){
+		$propertyModel = new PropertyModel();
+		$request = \Config\Services::request();
+		$id= $request->getGet('ID');
+		$propertyModel->deleteProperty($id);
+		return redirect()->to('/public/addProperty');
+
+		//echo "ID: {$id}";
+	}
 }

@@ -21,6 +21,10 @@ class modelRegister extends Model
         return $registerList->getResult();
     }
    
+    function deleteRegister($id){
+        $sql="DELETE FROM userregister WHERE id={$id}";
+        $this->db->query($sql);
+    }
 
     // ...
 }

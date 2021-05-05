@@ -39,6 +39,9 @@ $routes->get('addProperty/viewProperty', 'controllerAddProperty::viewProperty');
 $routes->get('register/viewRegister', 'registerController::viewRegister');
 $routes->post('/create', 'controllerAddProperty::create');
 $routes->post('/createReg', 'registerController::createReg');
+$routes->get('/deleteRegister', 'registerController::deleteRegister');
+$routes->post('/deleteProperty', 'controllerAddProperty::deleteProperty');
+
 
 /*
  * --------------------------------------------------------------------
