@@ -8,17 +8,14 @@ class controllerAddProperty extends BaseController
 	public function index()
 	{	
 		$taskproperty = new PropertyModel();
-	
 		$resultTasksproperty = $taskproperty->readproperty();
-
-		$data =array(
-			"createproperty"=>$resultTasksproperty,
-			
+		$data = array(
+			"createproperty" => $resultTasksproperty,
 		);
-
 		echo view('layouts/header');
 		echo view('vwProperty', $data);
 		echo view('layouts/footer');
+
 	}
 
 	public function viewProperty(){
