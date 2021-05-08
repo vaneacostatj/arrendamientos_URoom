@@ -16,8 +16,8 @@ class PropertyModel extends Model
 
     function readproperty(){
         $sql ="SELECT * FROM createproperty";
-        $propertyList = $this->db->query($sql);
-        return $propertyList->getResult();
+        $property = $this->db->query($sql);
+        return $property->getResult();
     }
    
     function deleteProperty($id){
