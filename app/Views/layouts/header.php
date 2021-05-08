@@ -33,7 +33,7 @@
             <a class="nav-link active" aria-current="page" href="<?php echo base_url().'/public'; ?>">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url().'/public/register/viewRegister'; ?>">Login</a>
+            <a class="nav-link" href="<?php echo base_url().'/public/register/viewRegister'; ?>">Register</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,10 +46,22 @@
           </li>
           
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-warning" type="submit">Search</button>
-        </form>
+       
+        
+          <form class="row g-3">
+            <div class="col-auto">
+              <label for="inputEmail2" class="visually-hidden">Email or User</label>
+              <input type="text" class="form-control" id="inputEmail2" name="user" placeholder="Email or User">
+            </div>
+            <div class="col-auto">
+              <label for="inputPassword2" class="visually-hidden">Password</label>
+              <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary mb-3">Login</button>
+            </div>
+          </form>
+      
       </div>
     </div>
   </nav>

@@ -46,7 +46,7 @@
 		 
  
 		 $modelRegister->register($firstname, $lastname, $email, $country, $state, $city, $user, $password, $rol, $zip);
-		 return redirect()->to('/register');
+		 return redirect()->to('/public/register');
  
 		 
 	 }
