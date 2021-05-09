@@ -1,19 +1,48 @@
-<section class="banner">
-    <div class="container-fluid banner__container" >
-        <div class="row banner__row">
-            <div class="col-12 col-lg-6 banner__paragraphs">
-                <div class="paragraphs__container">
-                    <h1 class="m-4 hero-heading paragraphs__title m-0">Lorem Ipsum Dolor Sit Amet </h1>
-                    <h2 class="m-4 paragraphs__subtitle">Lorem Ipsum Dolor Sit Amet</h2>
-                </div>
-                <button class="ml-4 paragraphs__button shadow btn btn-secondary">Primary</button>
-            </div>
-            <div class="col-12 col-lg-6 banner__media">
-                <div class="banner__images">
-                    <div class="images__phone"></div>
-                    <div class="images__capture"></div>
-                </div>
-            </div>
-        </div>
+<div>
+    <img src="https://i.imgur.com/hhGpmFr.jpg" class="img-fluid" alt="Responsive image">
+</div>
+</br></br>
+
+<div class="container" style = "float: right">
+    <div class="row">
+
+
+        <?php 
+        
+        foreach($property as $item){
+
+                $template="
+                <div class='col-12 col-sm-12 col-md-6 col-lg-4'>
+                    <div class='card' style='width: 18rem;'>
+                        <img src='{$item->photos}' class='card-img-top' alt='...'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>{$item->Dwelling}</h5>
+                            <p class='card-text'>
+                            País: {$item->Country}
+                            City: {$item->City}</br>
+                            Location: {$item->Location}</br>
+                            Value: {$item->Location}
+                        
+                            </p>
+                            <a href='#' class='btn btn-primary'>Reserve</a>
+                        </div>
+                    </div>
+                    </br>
+                </div>";
+    
+                echo $template;     
+
+        }
+
+        ?>
+
     </div>
-</section>
+</div>
+<div class="container" style = "float: letf" >
+    <div class="row">
+
+    <img src="https://i.imgur.com/NKLDJMJ.jpg" class="img-fluid" alt="Responsive image">
+       
+
+    </div>
+</div>

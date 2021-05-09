@@ -18,6 +18,7 @@ class controllerAddProperty extends BaseController
 
 	}
 
+
 	public function viewProperty(){
 		
 		$session = session();

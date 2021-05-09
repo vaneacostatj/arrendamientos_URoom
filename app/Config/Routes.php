@@ -33,7 +33,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/login-signIn', 'controllerLogin::signIn');
+$routes->get('/login-signIn', 'controllerLogin::index');
 $routes->get('/urbanProperty', 'controllerAddProperty::urbanProperty');
 $routes->get('/ruralProperty', 'controllerAddProperty::ruralProperty');
 $routes->get('/addProperty', 'controllerAddProperty::index');
