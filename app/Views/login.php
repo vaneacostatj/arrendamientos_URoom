@@ -1,6 +1,6 @@
 
 
-<div class="modal-dialog text-center">
+<!-- <div class="modal-dialog text-center">
   <div class="col-sm-8 main-section">
     <div class="modal-content">
       <div class="col-12 user-img">
@@ -17,4 +17,4 @@
       </form>
     </div>
   </div>
-</div>
+</div> -->

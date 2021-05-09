@@ -7,7 +7,11 @@ class controllerLogin extends BaseController
 {
 	public function index()
 	{	
-		$tasklogin = new loginModel();
+
+		echo view('layouts/header');
+		echo view('login');
+		echo view('layouts/footer');
+/* 		$tasklogin = new loginModel();
 	
 		$resultTaskslogin = $tasklogin->readlogin();
 
@@ -18,47 +22,31 @@ class controllerLogin extends BaseController
 
 		echo view('layouts/header');
 		echo view('vwLogin', $data);
-		echo view('layouts/footer');
+		echo view('layouts/footer'); */
 	}
 
-	public function viewLogin(){
-		echo view('layouts/header');
-		echo view('login');
-		echo view('layouts/footer');
-	}
+	public function signIn(){
 
-    public function loginTask(){
-        $loginTask = new loginModel();
-        $request = \config\services::request();
-        $id = $request->getGet('id');
-        
-    }
-
-
-		public function create(){
-
+		$taskLogin = new loginModel();	
 		$request = \Config\Services::request();
-		$propertyModel = new loginModel();
-
-		$document = $request-> getPost('Document');
-        $city = $request-> getPost('City');
-        $country = $request-> getPost('Country');
-        $address = $request-> getPost('Address');
-        $rooms =  $request-> getPost('Rooms');
-        $bathrooms = $request-> getPost('Bathrooms');
-        $area = $request-> getPost('Area');
-        $gas = $request-> getPost('Gas');
-        $transport = $request-> getPost('Transport');
-        $location = $request-> getPost('Location');
-        $value = $request-> getPost('Value');
-        $photos = $request-> getPost('photos');
-
-
-
-		/* $loginModel->addLogin($document, $city, $country, $address, $rooms, $bathrooms, $area, $gas, $transport, $location, $value, $photos);
-		return redirect()->to('/public/addLogin'); */
-
+		$resultLogin = $taskLogin->readLogin();
 		
+		$email = $request-> getPost('email');
+		$password = $request-> getPost('password');
+
+		if($resultLogin->email == $email && $resultLogin->password == $password){
+
+		$session = SESSION();
+		$newdata = [
+			'username'  => $resultLogin->user,
+			'email'     => $resultLogin->email,
+			'rol' => $resultLogin->rol
+		];
+		$session->set($newdata);
+		return redirect()->to('/public/addProperty');
+	};
 	}
+
+    
 
 }

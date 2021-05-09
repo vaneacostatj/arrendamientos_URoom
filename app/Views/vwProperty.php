@@ -5,7 +5,11 @@
 
 
         <?php 
+        
         foreach($property as $item){
+
+            $deleteRoute = base_url()."/public/deleteProperty?ID={$item->ID}";
+            $updateRoute = base_url()."/public/updateProperty?ID={$item->ID}";
             $template="
             <div class='col-12 col-sm-12 col-md-6 col-lg-4'>
                 <div class='card' style='width: 18rem;'>
@@ -19,7 +23,8 @@
                         Value: {$item->Location}
                     
                         </p>
-                        <a href='#' class='btn btn-primary'>Go somewhere</a>
+                        <a href='{$deleteRoute}' class='btn btn-danger'>delete</a>
+                        <a href='{$updateRoute}' class='btn btn-primary'>Update</a>
                     </div>
                 </div>
                 </br>

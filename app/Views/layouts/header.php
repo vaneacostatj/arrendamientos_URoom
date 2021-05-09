@@ -40,18 +40,18 @@
               Zone
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Rural</a></li>
-              <li><a class="dropdown-item" href="#">Urban</a></li>
+              <li><a class="dropdown-item" href="<?php echo base_url().'/public/ruralProperty'; ?>">Rural</a></li>
+              <li><a class="dropdown-item" href="<?php echo base_url().'/public/urbanProperty'; ?>">Urban</a></li>
             </ul>
           </li>
           
         </ul>
        
         
-          <form class="row g-3">
+          <form class="row g-3" action="<?php echo base_url().'/public/login-signIn'; ?>">
             <div class="col-auto">
               <label for="inputEmail2" class="visually-hidden">Email</label>
-              <input type="text" class="form-control" id="inputEmail2" placeholder="email@example.com">
+              <input type="text" class="form-control" name="email" id="inputEmail2" placeholder="email@example.com">
             </div>
             <div class="col-auto">
               <label for="inputPassword2" class="visually-hidden">Password</label>

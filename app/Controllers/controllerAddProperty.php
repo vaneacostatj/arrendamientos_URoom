@@ -19,8 +19,34 @@ class controllerAddProperty extends BaseController
 	}
 
 	public function viewProperty(){
+		$session = SESSION();
+		echo $session->get('username');
 		echo view('layouts/header');
 		echo view('addProperty');
+		echo view('layouts/footer');
+	}
+
+	public function urbanProperty(){
+
+		$taskproperty = new PropertyModel();
+		$resulProperty = $taskproperty->readproperty();
+		$data = array(
+			"property" => $resulProperty,
+		);
+		echo view('layouts/header');
+		echo view('urbanProperty',$data);
+		echo view('layouts/footer');
+	}
+
+	public function ruralProperty(){
+
+		$taskproperty = new PropertyModel();
+		$resulProperty = $taskproperty->readproperty();
+		$data = array(
+			"property" => $resulProperty,
+		);
+		echo view('layouts/header');
+		echo view('ruralProperty',$data);
 		echo view('layouts/footer');
 	}
 
@@ -36,7 +62,7 @@ class controllerAddProperty extends BaseController
         $address = $request-> getPost('Address');
         $rooms =  $request-> getPost('Rooms');
         $bathrooms = $request-> getPost('Bathrooms');
-        $area = $request-> getPost('Area');
+        $area = $request-> getPost('WetArea');
         $gas = $request-> getPost('Gas');
         $transport = $request-> getPost('Transport');
         $location = $request-> getPost('Location');
@@ -55,10 +81,51 @@ class controllerAddProperty extends BaseController
 	public function deleteProperty(){
 		$propertyModel = new PropertyModel();
 		$request = \Config\Services::request();
-		$id= $request->getGet('ID');
-		$propertyModel->deleteProperty($id);
+		$ID= $request->getGet('ID');
+		$propertyModel->deleteProperty($ID);
 		return redirect()->to('/public/addProperty');
 
-		//echo "ID: {$id}";
+		//echo "ID: {$ID}";
+	}
+
+	public function updateProperty(){
+
+		$propertyModel = new PropertyModel();
+		$request = \Config\Services::request();
+		$ID = $request->getGet('ID');
+		$property = $propertyModel->getProperty($ID);
+		//var_dump($property);
+		echo view('layouts/header');
+		echo view('updateProperty', array("property" => $property[0]));
+		echo view('layouts/footer');
+
+		//
+
+		
+	}
+
+	public function updateEditedProperty()
+	{
+		$propertyModel = new PropertyModel();
+		$request = \Config\Services::request();
+		
+		$ID = $request->getGet('ID');
+		$document = $request-> getPost('Document');
+        $city = $request-> getPost('City');
+        $country = $request-> getPost('Country');
+        $address = $request-> getPost('Address');
+        $rooms =  $request-> getPost('Rooms');
+        $bathrooms = $request-> getPost('Bathrooms');
+        $area = $request-> getPost('WetArea');
+        $gas = $request-> getPost('Gas');
+        $transport = $request-> getPost('Transport');
+        $location = $request-> getPost('Location');
+        $value = $request-> getPost('Value');
+        $photos = $request-> getPost('photos');
+		$Dwelling = $request-> getPost('Dwelling');
+		$Zone = $request-> getPost('Zone');
+
+		$propertyModel->updateEditedProperty($ID, $document, $city, $country, $address, $rooms, $bathrooms, $area, $gas, $transport, $location, $value, $photos, $Dwelling, $Zone);
+		return redirect()->to('/public/addProperty');
 	}
 }
