@@ -7,7 +7,8 @@
         <?php 
         foreach($createRegister as $item){
 
-                $route = base_url()."/deleteRegister?id={$item->id}";
+                $deleteRoute = base_url()."/public/deleteRegister?id={$item->id}";
+                $updateRoute = base_url()."/public/updateRegister?id={$item->id}";
                 $template ="   
 
                 <div class='col-12 col-sm-12 col-md-6 col-lg-4'>
@@ -24,7 +25,8 @@
                             Zip: {$item->zip}       
                             
                             </p>
-                            <a href='{$route}' class='btn btn-danger'> Delete </a>
+                            <a href='{$deleteRoute}' class='btn btn-danger'> Delete </a>
+                            <a href='{$updateRoute}' class='btn btn-warning'> Update</a>
                         </div>
                     </div> 
                     </br>

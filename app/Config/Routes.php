@@ -43,6 +43,8 @@ $routes->post('/create', 'controllerAddProperty::create');
 $routes->post('/createReg', 'registerController::createReg');
 $routes->get('/deleteRegister', 'registerController::deleteRegister');
 $routes->post('/deleteProperty', 'controllerAddProperty::deleteProperty');
+$routes->get('/updateRegister', 'registerController::updateRegister');
+$routes->post('/updateEdit', 'controllerAddProperty::updateEdit');
 
 
 /*

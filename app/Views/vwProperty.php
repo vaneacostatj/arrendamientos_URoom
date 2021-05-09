@@ -11,8 +11,9 @@
                 <div class='card' style='width: 18rem;'>
                     <img src='{$item->photos}' class='card-img-top' alt='...'>
                     <div class='card-body'>
-                        <h5 class='card-title'>{$item->Country}</h5>
+                        <h5 class='card-title'>{$item->Dwelling}</h5>
                         <p class='card-text'>
+                        País: {$item->Country}
                         City: {$item->City}</br>
                         Location: {$item->Location}</br>
                         Value: {$item->Location}

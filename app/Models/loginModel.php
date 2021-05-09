@@ -7,20 +7,18 @@ use CodeIgniter\Model;
 
 class loginModel extends Model
 {
-    function getlogin($user, $password){
+    function loginTask($id, $user, $email, $password, $rol){
         
-        $sql ="GET FROM userregister(user, password)VALUES('{$user}','{$password}')";
+        //$route = base_url()."/public/register?rol={$item->rol}";
+        $sql ="SELECT FROM userregister(user, password)VALUES('{$user}','{$email}', '{$password}', '{$rol}')";
+        $loginList = $this->db->query($sql);
+        return $loginList->getResult();
+    }       
+        
 
-        $this->db->query($sql);
-       
-    }
-
-    function readRegister(){
-        $sql ="GET * FROM userregister";
+    function readLogin(){
+        $sql ="SELECT * FROM userregister";
         $registerList = $this->db->query($sql);
         return $registerList->getResult();
     }
-   
-
-    // ...
 }

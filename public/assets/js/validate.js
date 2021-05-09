@@ -11,8 +11,8 @@ function validateProperty(){
     let Location = document.getElementById('inputLocation').value;
     let Value = document.getElementById('inputValue').value;
     let photos = document.getElementById('photos').value;
-
-
+    let Dwelling = document.getElementById('inputDwelling').value;
+    let Zone = document.getElementById('inputZone').value;
    
     if(Document === ""){
         alert("must fill the field Document")
@@ -59,6 +59,14 @@ function validateProperty(){
         return false;
     }
     if(photos === "" ){
+        alert("must fill the field photos")
+        return false;
+    }
+    if(Dwelling === "" ){
+        alert("must fill the field photos")
+        return false;
+    }
+    if(Zone === "" ){
         alert("must fill the field photos")
         return false;
     }

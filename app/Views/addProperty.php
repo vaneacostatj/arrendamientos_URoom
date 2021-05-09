@@ -55,14 +55,35 @@
     <label for="inputLocation" class="form-label">Location</label>
     <input type="text" class="form-control" name="Location" id="inputLocation" placeholder="Location">
   </div>
-  <div class="col-md-6">
+  <div class="col-md-3">
     <label for="inputValue" class="form-label">Value</label>
     <input type="text" class="form-control" name="Value" id="inputValue">
   </div>
-  <div class="col-md-6">
+  <div class="col-md-3">
     <label for="inputphotos" class="form-label">Upload the photos of the property</label>
     <input type="text" class="form-control" name="photos" id="photos">
   </div>
+  <div class="col-md-3">
+    <label for="inputWetArea" class="form-label">Type of Dwelling</label>
+    <select id="inputDwelling" name="Dwelling" class="form-select">
+      <option selected>Choose...</option>
+      <option>Apartment</option>
+      <option>Home</option>
+      <option>Studio Apartment</option>
+      <option>Coworking</option>
+      <option>Farm House</option>
+      <option>Bedrooms</option>
+    </select>
+  </div>
+  <div class="col-md-3">
+    <label for="inputWetArea" class="form-label">Zone</label>
+    <select id="inputZone" name="Zone" class="form-select">
+      <option selected>Choose...</option>
+      <option>Rural</option>
+      <option>Urban</option>
+    </select>
+  </div>
+
   
  
   <div class="col-12">

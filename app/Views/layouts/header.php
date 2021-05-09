@@ -48,14 +48,14 @@
         </ul>
        
         
-          <form class="row g-3">
+          <form class="row g-3" method="POST" id="login" action="loginTask">
             <div class="col-auto">
-              <label for="inputEmail2" class="visually-hidden">Email or User</label>
-              <input type="text" class="form-control" id="inputEmail2" name="user" placeholder="Email or User">
+              <label for="inputEmail2" class="visually-hidden">User or Email</label>
+              <input type="text" class="form-control" id="inputEmail2" name="user" placeholder="User or Email">
             </div>
             <div class="col-auto">
               <label for="inputPassword2" class="visually-hidden">Password</label>
-              <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+              <input type="password" class="form-control" id="inputPassword2" name="password" placeholder="Password">
             </div>
             <div class="col-auto">
               <button type="submit" class="btn btn-primary mb-3">Login</button>

@@ -7,12 +7,12 @@ class controllerLogin extends BaseController
 {
 	public function index()
 	{	
-		$tasklogin = new loginModel();
+		$loginModel = new loginModel();
 	
-		$resultTaskslogin = $tasklogin->readlogin();
+		$resultLoginModel = $loginModel->readLogin();
 
 		$data =array(
-			"createlogin"=>$resultTaskslogin,
+			"createlogin"=>$resultLoginModel,
 			
 		);
 
@@ -28,37 +28,35 @@ class controllerLogin extends BaseController
 	}
 
     public function loginTask(){
-        $loginTask = new loginModel();
+		//$getLogin=document.getElementById(login).value;
+        $loginModel = new loginModel();
         $request = \config\services::request();
-        $id = $request->getGet('id');
+        $user = $request->getGet('user');
+        $email = $request->getGet('email');
+        $password = $request->getGet('password');
+        $rol = $request->getGet('rol');
+
+		$loginModel->register($email, $user, $password, $rol);
+		return redirect()->to('/public/login');
+
+		/* if(user == "" || email == "" || password == ""){
+			echo"The fields must be required";
+		}
+		else
+		if(rol == Invited){
+			return redirect()->to('/public/');
+		}
+		else
+		if(rol == Host){
+			return redirect()->to('/public/');
+		}
+		else
+		if(rol == Admin){
+			return redirect()->to('/public/');
+		} */
         
     }
 
 
-		public function create(){
-
-		$request = \Config\Services::request();
-		$propertyModel = new loginModel();
-
-		$document = $request-> getPost('Document');
-        $city = $request-> getPost('City');
-        $country = $request-> getPost('Country');
-        $address = $request-> getPost('Address');
-        $rooms =  $request-> getPost('Rooms');
-        $bathrooms = $request-> getPost('Bathrooms');
-        $area = $request-> getPost('Area');
-        $gas = $request-> getPost('Gas');
-        $transport = $request-> getPost('Transport');
-        $location = $request-> getPost('Location');
-        $value = $request-> getPost('Value');
-        $photos = $request-> getPost('photos');
-
-
-
-		/* $loginModel->addLogin($document, $city, $country, $address, $rooms, $bathrooms, $area, $gas, $transport, $location, $value, $photos);
-		return redirect()->to('/public/addLogin'); */
-
-		
-	}
-
 }
+

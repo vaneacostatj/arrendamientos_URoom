@@ -7,9 +7,7 @@
 	 public function index()
 	 {	
 		 $taskRegister = new modelRegister();
-	 
 		 $resultTasksRegister = $taskRegister->readRegister();
- 
 		 $data =array(
 			 "createRegister"=>$resultTasksRegister,
 			 
@@ -44,7 +42,6 @@
 		 $zip = $request-> getPost('zip');
 
 		 
- 
 		 $modelRegister->register($firstname, $lastname, $email, $country, $state, $city, $user, $password, $rol, $zip);
 		 return redirect()->to('/public/register');
  
@@ -52,13 +49,45 @@
 	 }
 
 	 public function deleteRegister(){
-		$modelRegister = new modelRegister();
+		$ModelRegister = new modelRegister();
 		$request = \Config\Services::request();
-		$id= $request->getGet('id');
-		$modelRegister->deleteRegister($id);
+		$id = $request->getGet('id');
+		$ModelRegister->deleteRegister($id);
 		return redirect()->to('/public/register');
-
 		//echo "ID: {$id}";
+	}
+
+	public function updateRegister(){
+		$ModelRegister = new modelRegister();
+		$request = \Config\Services::request();
+		$id = $request->getGet('id');
+		$ModelUpdate = $ModelRegister->getRegister($id);
+		echo view('layouts/header');
+		echo view('vwUpdate', array("ModelUpdate" => $ModelUpdate[0]));
+		echo view('layouts/footer');
+		//var_dump($ModelUpdate);
+	}
+
+	public function updateEdit(){
+
+		 
+		$request = \Config\Services::request();
+		$modelRegister = new modelRegister();
+		$id = $request-> getGet('id');
+		$firstname = $request-> getPost('firstname');
+		$lastname = $request-> getPost('lastname');
+		$email = $request-> getPost('email');
+		$country = $request-> getPost('country');
+		$state =  $request-> getPost('state');
+		$city = $request-> getPost('city');
+		$user = $request-> getPost('user');
+		$password = $request-> getPost('password');
+		$rol = $request-> getPost('rol');
+		$zip = $request-> getPost('zip');
+	
+		$modelRegister->updateRegister($id, $firstname, $lastname, $email, $country, $state, $city, $user, $password, $rol, $zip);
+		return redirect()->to('/public/register'); 
+
 	}
 }
   
