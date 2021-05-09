@@ -4,7 +4,7 @@
     
     <form class="row g-3" action="<?php echo base_url().'/public/create'?>" method="POST"  onsubmit="return validateProperty();">
   <div class="col-md-4">    
-    <label for="inputDocument" class="form-label">Identification Document</label>
+    <label for="inputDocument" class="form-label">User</label>
     <input type="text" class="form-control" name="Document" id="inputDocument">
   </div>
   <div class="col-md-4">    

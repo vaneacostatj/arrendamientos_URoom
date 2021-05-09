@@ -20,10 +20,19 @@ class PropertyModel extends Model
         return $property->getResult();
     }
    
-    function deleteProperty($id){
-        $sql="DELETE FROM createproperty WHERE ID={$id}";
+    function deleteProperty($ID){
+        $sql="DELETE FROM createproperty WHERE ID={$ID}";
         $this->db->query($sql);
     }
 
-    // ...
+    function updateEditedProperty($ID,$document, $city, $country, $address, $rooms, $bathrooms, $area, $gas, $transport, $location, $value, $photos, $Dwelling, $Zone){
+        $sql = "UPDATE createproperty set Document='{$document}', City='{$city}', Country='{$country}', Address='{$address}', Rooms={$rooms}, Bathrooms={$bathrooms}, WetArea='{$area}', Gas='{$gas}', Transport='{$transport}', Location='{$location}', Value={$value}, photos='{$photos}', Dwelling='{$Dwelling}', Zone='{$Zone}' WHERE ID={$ID}";
+        $this->db->query($sql);
+    }
+
+    function getProperty($ID){
+        $sql = "SELECT * FROM createproperty WHERE id={$ID}";
+        $property = $this->db->query($sql);
+        return $property->getResult();
+    }
 }

@@ -5,6 +5,7 @@ use App\Models\loginModel;
 
 class controllerLogin extends BaseController
 {
+<<<<<<< HEAD
 	public function index()
 	{	
 		$loginModel = new loginModel();
@@ -60,3 +61,8 @@ class controllerLogin extends BaseController
 
 }
 
+=======
+ 
+
+}
+>>>>>>> e2ed0c5db347131666ecc8b3260b6df3c6279b17

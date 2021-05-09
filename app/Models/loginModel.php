@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 
@@ -22,3 +23,5 @@ class loginModel extends Model
         return $registerList->getResult();
     }
 }
+=======
+>>>>>>> e2ed0c5db347131666ecc8b3260b6df3c6279b17
