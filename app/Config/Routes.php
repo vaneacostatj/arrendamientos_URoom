@@ -44,9 +44,15 @@ $routes->get('register/viewRegister', 'registerController::viewRegister');
 $routes->post('/create', 'controllerAddProperty::create');
 $routes->post('/createReg', 'registerController::createReg');
 $routes->get('/deleteRegister', 'registerController::deleteRegister');
+<<<<<<< HEAD
+$routes->post('/deleteProperty', 'controllerAddProperty::deleteProperty');
+$routes->get('/updateRegister', 'registerController::updateRegister');
+$routes->post('/updateEdit', 'controllerAddProperty::updateEdit');
+=======
 $routes->get('/deleteProperty', 'controllerAddProperty::deleteProperty');
 $routes->get('/updateProperty', 'controllerAddProperty::updateProperty');
 $routes->post('/updateEdid-Property', 'controllerAddProperty::updateEditedProperty');
+>>>>>>> e2ed0c5db347131666ecc8b3260b6df3c6279b17
 
 
 /*

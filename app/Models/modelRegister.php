@@ -26,12 +26,18 @@ class modelRegister extends Model
         $this->db->query($sql);
     }
 
-    // ...
+    function getRegister($id){
+        $sql ="SELECT * FROM userregister WHERE id={$id}";
+        $registerList = $this->db->query($sql);
+        return $registerList->getResult();
+    }
+
+    function updateRegister($id, $firstname, $lastname, $email, $country, $state, $city, $user, $password, $rol, $zip){
+        $sql = "UPDATE userregister set firstname='{$firstname}', lastname='{$lastname}', email='{$email}', country='{$country}', state='{$state}', city='{$city}', user='{$user}', password='{$password}', rol='{$rol}', zip='{$zip}' WHERE id={$id}";
+
+        $this->db->query($sql);
+    }
 }
-
-
-
-
 
 
 

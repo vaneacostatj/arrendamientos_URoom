@@ -1,4 +1,6 @@
 
+<<<<<<< HEAD
+=======
 
 <!-- <div class="modal-dialog text-center">
   <div class="col-sm-8 main-section">
@@ -18,3 +20,4 @@
     </div>
   </div>
 </div> -->
+>>>>>>> e2ed0c5db347131666ecc8b3260b6df3c6279b17

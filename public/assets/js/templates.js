@@ -1,7 +1,7 @@
-let cards = document.getElementById("cards");
+/* let cards = document.getElementById("cards");
 
-let cardsTemplate = `<div id='name${i}' class='col-12 col-sm-12 col-md-6 col-lg-3'>
-<div clas='col'>
+let cardsTemplate = "<div id='name${i}' class='col-12 col-sm-12 col-md-6 col-lg-3'>
+<div class='col'>
     <div class='card' style='width: 18rem;'>
         <img src='${/img/apto.jpg}' class='card-img-top' alt='...'>
         <div class='card-body'>
@@ -11,9 +11,9 @@ let cardsTemplate = `<div id='name${i}' class='col-12 col-sm-12 col-md-6 col-lg-
         </div>
     </div>
 </div>
-</div>`;
+</div>;
 
-for (let i=0; i<5; i++) {
+for (let i=0; i<2; i++) {
     cards.innerHTML += cardsTemplate;
-}
+} */
 
