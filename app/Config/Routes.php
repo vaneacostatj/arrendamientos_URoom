@@ -33,26 +33,41 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+
 $routes->get('/login-signIn', 'controllerLogin::index');
+$routes->get('login/viewLogin', 'controllerLogin::viewLogin');
+$routes->post('signIn', 'controllerLogin::loginTask');
+
 $routes->get('/urbanProperty', 'controllerAddProperty::urbanProperty');
 $routes->get('/ruralProperty', 'controllerAddProperty::ruralProperty');
 $routes->get('/addProperty', 'controllerAddProperty::index');
-$routes->get('/register', 'registerController::index');
-$routes->get('login/viewLogin', 'controllerLogin::viewLogin');
 $routes->get('addProperty/viewProperty', 'controllerAddProperty::viewProperty');
-$routes->get('register/viewRegister', 'registerController::viewRegister');
 $routes->post('/create', 'controllerAddProperty::create');
-$routes->post('/createReg', 'registerController::createReg');
-$routes->get('/deleteRegister', 'registerController::deleteRegister');
-<<<<<<< HEAD
 $routes->post('/deleteProperty', 'controllerAddProperty::deleteProperty');
-$routes->get('/updateRegister', 'registerController::updateRegister');
-$routes->post('/updateEdit', 'controllerAddProperty::updateEdit');
-=======
-$routes->get('/deleteProperty', 'controllerAddProperty::deleteProperty');
 $routes->get('/updateProperty', 'controllerAddProperty::updateProperty');
 $routes->post('/updateEdid-Property', 'controllerAddProperty::updateEditedProperty');
->>>>>>> e2ed0c5db347131666ecc8b3260b6df3c6279b17
+
+$routes->get('/register', 'registerController::index');
+$routes->get('register/viewRegister', 'registerController::viewRegister');
+$routes->post('/createReg', 'registerController::createReg');
+$routes->get('/deleteRegister', 'registerController::deleteRegister');
+$routes->get('/updateRegister', 'registerController::updateRegister');
+$routes->post('/updateEdit', 'registerController::updateEdit');
+$routes->post('/hostView', 'registerController::hostView');
+$routes->get('/readHost', 'registerController::readHost');
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*

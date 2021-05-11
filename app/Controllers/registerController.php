@@ -89,5 +89,50 @@
 		return redirect()->to('/public/register'); 
 
 	}
+
+
+
+	public function readHost(){
+		$session = session();
+		echo $session->get('user');
+		echo $session->get('rol');
+
+		$request = \Config\Services::request();
+		$modelRegister = new modelRegister();
+		$user = $request-> getGet('user');
+		$password = $request-> getGet('password');
+		$rol = $request-> getGet('rol');
+		$modelRegister->readRegister($user, $password, $rol);
+
+		if($session->get('user') != "" || $session->get('user') != null && $password->get('pass') != "" || $password->get('pass') != null){
+
+			if($session->get('user') == $modelRegister->user || $password->get('pass') == $modelRegister->password){
+
+				if($modelRegister->rol == 'Admin'){
+
+					echo view('layouts/header');
+					echo view('vwHost');
+					echo view('layouts/footer');
+				}
+				else
+					if($modelRegister->rol == 'Host'){
+
+						echo view('layouts/header');
+						echo view('vwHost');
+						echo view('layouts/footer');
+					}
+					else
+						if($modelRegister->rol == 'Invited'){
+
+							echo view('layouts/header');
+							echo view('vwHost');
+							echo view('layouts/footer');
+						}
+			}	
+		}
+		else{
+			echo "You don't have access to continue";
+		}
+	}	
 }
   

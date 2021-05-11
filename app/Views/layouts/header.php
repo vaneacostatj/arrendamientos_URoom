@@ -47,22 +47,15 @@
           
         </ul>
        
-        
-<<<<<<< HEAD
-          <form class="row g-3" method="POST" id="login" action="loginTask">
+          <form class="row g-3" method="POST" id="login" action="<?php echo base_url().'/public/signIn'?>">
             <div class="col-auto">
-              <label for="inputEmail2" class="visually-hidden">User or Email</label>
-              <input type="text" class="form-control" id="inputEmail2" name="user" placeholder="User or Email">
-=======
-          <form class="row g-3" action="<?php echo base_url().'/public/login-signIn'; ?>">
-            <div class="col-auto">
-              <label for="inputEmail2" class="visually-hidden">Email</label>
-              <input type="text" class="form-control" name="email" id="inputEmail2" placeholder="email@example.com">
->>>>>>> e2ed0c5db347131666ecc8b3260b6df3c6279b17
+              <label for="userlog" class="visually-hidden">User</label>
+              <input type="text" class="form-control" id="userlog" name="user" placeholder="User">
+
             </div>
             <div class="col-auto">
-              <label for="inputPassword2" class="visually-hidden">Password</label>
-              <input type="password" class="form-control" id="inputPassword2" name="password" placeholder="Password">
+              <label for="pass" class="visually-hidden">Password</label>
+              <input type="password" class="form-control" id="pass" name="password" placeholder="Password">
             </div>
             <div class="col-auto">
               <button type="submit" class="btn btn-primary mb-3">Login</button>
