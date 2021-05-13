@@ -1,6 +1,12 @@
 <footer class="footer mt-auto py-3 bg-light " >
-
-    <span class="text-muted " id="firm"> &copy Web developed by Steven Torres and Vanessa Acosta</span>
+<div class="card text-white bg-dark mb-3">
+ 
+ <div class="card-body">
+   <h5 class="card-title text-center"></h5>
+   <p class="card-text text-center">&copy Web developed</p>
+   <p class="card-text text-center"><small class="text-muted">by Steven Torres and Vanessa Acosta.</small></p>
+ </div>
+</div>
 
 </footer>
 
