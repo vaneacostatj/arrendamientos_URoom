@@ -36,7 +36,7 @@ $routes->get('/', 'Home::index');
 
 $routes->get('/login-signIn', 'controllerLogin::index');
 $routes->get('login/viewLogin', 'controllerLogin::viewLogin');
-$routes->post('signIn', 'controllerLogin::loginTask');
+$routes->post('/signIn', 'controllerLogin::loginTask');
 
 $routes->get('/urbanProperty', 'controllerAddProperty::urbanProperty');
 $routes->get('/ruralProperty', 'controllerAddProperty::ruralProperty');

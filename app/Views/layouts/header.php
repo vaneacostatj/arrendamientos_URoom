@@ -50,12 +50,12 @@
           <form class="row g-3" method="POST" id="login" action="<?php echo base_url().'/public/signIn'?>">
             <div class="col-auto">
               <label for="userlog" class="visually-hidden">User</label>
-              <input type="text" class="form-control" id="userlog" name="user" placeholder="User">
+              <input type="text" class="form-control" id="userlog" name="userlog" placeholder="User">
 
             </div>
             <div class="col-auto">
               <label for="pass" class="visually-hidden">Password</label>
-              <input type="password" class="form-control" id="pass" name="password" placeholder="Password">
+              <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
             </div>
             <div class="col-auto">
               <button type="submit" class="btn btn-primary mb-3">Login</button>

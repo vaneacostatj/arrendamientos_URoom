@@ -18,18 +18,21 @@ class controllerLogin extends BaseController
     public function loginTask(){
 
 		$request = \Config\Services::request();
-		$user = $request-> getPost('user');
-		$password = $request-> getPost('password');
-		$rol = $request-> getPost('rol');
+		$user = $request->getPost('userlog');
+		$password = $request->getPost('pass');
+		//$rol = $request-> getPost('rol');
+		
 
 		$session = session();
 		$newdata = [
 			'user'  => $user,
-			'rol'  => $rol,			
+			'rol'  => 'Admin',			
 		];
 		$session->set($newdata);
-		return redirect()->to('/public/readHost');
-		var_dump($session);
+		echo($password);
+		echo($user);
+		/* return redirect()->to('/public/readHost');
+		var_dump($session); */
 
 
 		/* 
