@@ -1,6 +1,6 @@
 <div class="class" id="fondoHome">
 <d>
-    <img src="https://i.imgur.com/hhGpmFr.jpg" class="img-fluid" alt="Responsive image">
+    <img src="https://i.imgur.com/hhGpmFr.jpg" width="100%" class="img-fluid" alt="Responsive image">
 </>
 
 

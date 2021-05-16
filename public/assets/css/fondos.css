@@ -29,10 +29,10 @@
 
   #fondoHome {    
    
-    background-image: url("https://i.imgur.com/xZAPmj7.jpg");
+    background: url("https://i.imgur.com/xZAPmj7.jpg");
     width:auto;
     height:auto;
-    background-repeat: repeat-y;
+    background-repeat: repeat;
     color: #fff
         
   }
