@@ -35,26 +35,28 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 
 $routes->get('/login-signIn', 'controllerLogin::index');
-$routes->get('login/viewLogin', 'controllerLogin::viewLogin');
+$routes->get('/login/viewLogin', 'controllerLogin::viewLogin');
 $routes->post('/signIn', 'controllerLogin::loginTask');
 
 $routes->get('/urbanProperty', 'controllerAddProperty::urbanProperty');
 $routes->get('/ruralProperty', 'controllerAddProperty::ruralProperty');
 $routes->get('/addProperty', 'controllerAddProperty::index');
-$routes->get('addProperty/viewProperty', 'controllerAddProperty::viewProperty');
+$routes->get('/addProperty/viewProperty', 'controllerAddProperty::viewProperty');
 $routes->post('/create', 'controllerAddProperty::create');
 $routes->post('/deleteProperty', 'controllerAddProperty::deleteProperty');
 $routes->get('/updateProperty', 'controllerAddProperty::updateProperty');
 $routes->post('/updateEdid-Property', 'controllerAddProperty::updateEditedProperty');
 
 $routes->get('/register', 'registerController::index');
-$routes->get('register/viewRegister', 'registerController::viewRegister');
+$routes->get('/register/viewRegister', 'registerController::viewRegister');
 $routes->post('/createReg', 'registerController::createReg');
 $routes->get('/deleteRegister', 'registerController::deleteRegister');
 $routes->get('/updateRegister', 'registerController::updateRegister');
 $routes->post('/updateEdit', 'registerController::updateEdit');
 $routes->post('/hostView', 'registerController::hostView');
 $routes->get('/readHost', 'registerController::readHost');
+//$routes->get('/vwHost', 'registerController::readHost');
+
 
 
 

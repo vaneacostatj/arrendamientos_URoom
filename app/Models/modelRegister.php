@@ -37,6 +37,12 @@ class modelRegister extends Model
 
         $this->db->query($sql);
     }
+
+    function getLog($user){
+        $sql ="SELECT * FROM userregister WHERE user LIKE '{$user}%'";
+        $registerList = $this->db->query($sql);
+        return $registerList->getResult();
+    }
 }
 
 

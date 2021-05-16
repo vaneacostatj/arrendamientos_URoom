@@ -94,19 +94,22 @@
 
 	public function readHost(){
 		$session = session();
-		echo $session->get('user');
+		echo $session->get('userlog');
+		echo $session->get('pass');
 		echo $session->get('rol');
 
-		$request = \Config\Services::request();
-		$modelRegister = new modelRegister();
+		/* $request = \Config\Services::request();
 		$user = $request-> getGet('user');
 		$password = $request-> getGet('password');
-		$rol = $request-> getGet('rol');
-		$modelRegister->readRegister($user, $password, $rol);
+		$rol = $request-> getGet('rol'); */
 
-		if($session->get('user') != "" || $session->get('user') != null && $password->get('pass') != "" || $password->get('pass') != null){
+		$modelRegister = new modelRegister();
+		//$modelRegister->userregister($user, $password, $rol);
+		$getLog = $modelRegister->getLog($session->user);
 
-			if($session->get('user') == $modelRegister->user || $password->get('pass') == $modelRegister->password){
+		/* if($session->get('user') != "" || $session->get('user') != null && $password->get('pass') != "" || $password->get('pass') != null){
+
+			if($session->get('user') == $modelRegister->user && $password->get('pass') == $modelRegister->password){
 
 				if($modelRegister->rol == 'Admin'){
 
@@ -132,7 +135,8 @@
 		}
 		else{
 			echo "You don't have access to continue";
-		}
-	}	
+		} */
+		var_dump($getLog);	
+	}
+
 }
-  

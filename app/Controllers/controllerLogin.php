@@ -29,10 +29,10 @@ class controllerLogin extends BaseController
 			'rol'  => 'Admin',			
 		];
 		$session->set($newdata);
-		echo($password);
-		echo($user);
-		/* return redirect()->to('/public/readHost');
-		var_dump($session); */
+		return redirect()->to('/public/readHost');
+		/* echo($password);
+		echo($user); */
+		//var_dump($session);
 
 
 		/* 
