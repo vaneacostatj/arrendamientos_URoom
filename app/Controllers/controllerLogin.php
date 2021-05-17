@@ -36,7 +36,12 @@ class controllerLogin extends BaseController
 
 
 		} else {
-			echo "You don't have access to continue";
+
+			//$message="You don't have access to continue";
+			echo view('layouts/header');
+			echo "<script>alert(alert())</script>";
+			echo view('layouts/footer');
+			//return redirect()->to('/public/Home');
 		}
 	}
 }

@@ -96,10 +96,11 @@ class registerController extends BaseController
 
 	public function readHost()
 	{
-		$session = session();
+		$request = \Config\Services::request();	
+		$user = $request->getGet('user');
 		$modelRegister = new modelRegister();
-	
-		$getLog = $modelRegister->getLog($session->user);
+
+		$getLog = $modelRegister->getLog($user);
 		echo view('layouts/header');
 		echo view('vwHost',array("getLog" => $getLog[0]));
 		echo view('layouts/footer');
@@ -107,27 +108,28 @@ class registerController extends BaseController
 
 	public function readInvited()
 	{
-		$session = session();
+		$request = \Config\Services::request();	
+		$user = $request->getGet('user');
 		$modelRegister = new modelRegister();
 
-		$modelRegister->userregister();
-		$getLog = $modelRegister->getLog($session->user);
+		$getLog = $modelRegister->getLog($user);
 
 		echo view('layouts/header');
-		echo view('vwHost',array("getLog" => $getLog[0]));
+		echo view('vwInvited',array("getLog" => $getLog[0]));
 		echo view('layouts/footer');
 	}
 
 	public function readAdmin()
 	{
-		$session = session();
+		$request = \Config\Services::request();	
+		$user = $request->getGet('user');
 		$modelRegister = new modelRegister();
 
-		$modelRegister->userregister();
-		$getLog = $modelRegister->getLog($session->user);
+		$getLog = $modelRegister->getLog($user);
+		//var_dump ($getLog);
 
 		echo view('layouts/header');
-		echo view('readAdmin',array("getLog" => $getLog[0]));
+		echo view('vwAdmin',array("getLog" => $getLog[0]));
 		echo view('layouts/footer');
 	}
 
