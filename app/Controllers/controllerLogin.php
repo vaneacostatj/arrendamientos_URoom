@@ -1,13 +1,15 @@
-<?php 
+<?php
 
 namespace App\Controllers;
-/* use App\Models\loginModel; */
+
+use App\Models\modelRegister;
 
 
 class controllerLogin extends BaseController
 {
 
-	public function index(){
+	public function index()
+	{
 		$session = session();
 		$session->destroy();
 		echo view('layouts/header');
@@ -15,41 +17,26 @@ class controllerLogin extends BaseController
 		echo view('layouts/footer');
 	}
 
-    public function loginTask(){
-
+	public function loginTask()
+	{
 		$request = \Config\Services::request();
 		$user = $request->getPost('userlog');
 		$password = $request->getPost('pass');
-		//$rol = $request-> getPost('rol');
-		
 
-		$session = session();
-		$newdata = [
-			'user'  => $user,
-			'rol'  => 'Admin',			
-		];
-		$session->set($newdata);
-		return redirect()->to('/public/readHost');
-		/* echo($password);
-		echo($user); */
-		//var_dump($session);
+		if ($user != "" || $user != null && $password != "" || $password != null) {
+
+			$session = session();
+			$newdata = [
+				'user'  => $user,
+				'password'  => $password,		
+			];
+			$session->set($newdata);
+			return redirect()->to('/public/login');
 
 
-		/* 
-		
 
-		if($user == "" || $user == null){
-			echo"The fields must be required";
+		} else {
+			echo "You don't have access to continue";
 		}
-		else{
-			if($user == $resultLogin->user && $password == $resultLogin->password){
-				$newdata = [
-					'
-				];
-				$session->set($newdata);
-				return redirect()->to('/public/hostView');
-
-			}
-		} */
-    }
+	}
 }

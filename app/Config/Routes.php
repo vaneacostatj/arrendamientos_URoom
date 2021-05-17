@@ -55,7 +55,8 @@ $routes->get('/updateRegister', 'registerController::updateRegister');
 $routes->post('/updateEdit', 'registerController::updateEdit');
 $routes->post('/hostView', 'registerController::hostView');
 $routes->get('/readHost', 'registerController::readHost');
-//$routes->get('/vwHost', 'registerController::readHost');
+$routes->get('/login', 'registerController::readLogin');
+$routes->get('/readAdmin', 'registerController::readAdmin');
 
 
 
