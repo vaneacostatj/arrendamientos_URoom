@@ -26,7 +26,7 @@ class controllerLogin extends BaseController
 		$session = session();
 		$newdata = [
 			'user'  => $user,
-			'rol'  => 'Admin',			
+			'password'  => $password,			
 		];
 		$session->set($newdata);
 		return redirect()->to('/public/readHost');

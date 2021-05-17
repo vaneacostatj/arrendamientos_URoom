@@ -20,15 +20,10 @@ class controllerAddProperty extends BaseController
 
 
 	public function viewProperty(){
-		
-		$session = session();
-		echo $session->get('user');
-
-		//if($session->get('user') =! "" || $session->get('user') =! null){
+			
 		echo view('layouts/header');
 		echo view('addProperty');
-		echo view('layouts/footer');
-		//};					
+		echo view('layouts/footer');					
 	}
 
 	public function urbanProperty(){

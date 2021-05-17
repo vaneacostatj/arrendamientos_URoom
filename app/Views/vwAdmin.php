@@ -1,7 +1,9 @@
-<div class="class" id="fondoUSER">
+
+<div class="class" id="">
 <?php 
-	// var_dump($getLogProp);
-    var_dump($getLog);	 
+	//var_dump($getLogProp);
+   // var_dump($getLog->rol);	 
+    //echo $prueba = $getLog->lastname;
     $Firstname = $getLog->firstname;       
     $Lastname = $getLog->lastname; 
     $Email = $getLog->email;               
@@ -12,6 +14,11 @@
     $Rol = $getLog->rol; 
     $Zip = $getLog->zip;   
     $id = $getLog->id;
+    $updateRoute = base_url()."/public/updateRegister?id={$id}";
+    $addProperty = base_url()."/public/addProperty/viewProperty";
+    $addUser = base_url()."/public/register/viewRegister";
+    $users = base_url()."/public/register";
+    $properties = base_url()."/public/addProperty";
     
     $template="
     </br></br>
@@ -66,7 +73,8 @@
     
     <?php // prueba ----------------------------------------------------------?>  
     </br></br>
-    <a href='{$addProperty}' class='btn btn-outline-dark'>Add Propert
+    <a href='{$addProperty}' class='btn btn-outline-dark'>Add Property</a>
+    <a href='{$addUser}' class='btn btn-outline-dark'>Add User</a>
     
     
           </div>
@@ -79,6 +87,4 @@
 ";
 echo $template;
 ?>
-
-
- <?php // prueba ----------------------------------------------------------?>       
+    </div>
