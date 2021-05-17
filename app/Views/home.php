@@ -1,7 +1,7 @@
 <div class="class" id="fondoHome">
-<d>
+<div>
     <img src="https://i.imgur.com/hhGpmFr.jpg" width="100%" class="img-fluid" alt="Responsive image">
-</>
+</div>
 
 
 
