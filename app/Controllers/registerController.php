@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\modelRegister;
+use App\Models\PropertyModel;
 
 class registerController extends BaseController
  {
@@ -99,10 +100,12 @@ class registerController extends BaseController
 		$request = \Config\Services::request();	
 		$user = $request->getGet('user');
 		$modelRegister = new modelRegister();
+		$PropertyModel= new PropertyModel();
 
 		$getLog = $modelRegister->getLog($user);
-		echo view('layouts/header2');
-		echo view('vwHost',array("getLog" => $getLog[0]));
+		$getLogProp = $PropertyModel->getLogProp($user);
+		echo view('layouts/header');
+		echo view('vwHost',array("getLog" => $getLog[0], "getLogProp" => $getLogProp[0]));
 		echo view('layouts/footer');
 	}
 
@@ -114,7 +117,7 @@ class registerController extends BaseController
 
 		$getLog = $modelRegister->getLog($user);
 
-		echo view('layouts/header2');
+		echo view('layouts/header');
 		echo view('vwInvited',array("getLog" => $getLog[0]));
 		echo view('layouts/footer');
 	}
@@ -128,7 +131,7 @@ class registerController extends BaseController
 		$getLog = $modelRegister->getLog($user);
 		//var_dump ($getLog);
 
-		echo view('layouts/header2');
+		echo view('layouts/header');
 		echo view('vwAdmin',array("getLog" => $getLog[0]));
 		echo view('layouts/footer');
 	}
@@ -141,7 +144,7 @@ class registerController extends BaseController
 		$getLog = $modelRegister->getLog($User);
 
 		echo view('layouts/header');
-		echo view('login',array("getLog" => $getLog[0]));
+		echo view('login',array("getLog" => $getLog[0], ));
 		echo view('layouts/footer');
 		//var_dump($getLog);
 	}
