@@ -101,7 +101,7 @@ class registerController extends BaseController
 		$modelRegister = new modelRegister();
 
 		$getLog = $modelRegister->getLog($user);
-		echo view('layouts/header');
+		echo view('layouts/header2');
 		echo view('vwHost',array("getLog" => $getLog[0]));
 		echo view('layouts/footer');
 	}
@@ -114,7 +114,7 @@ class registerController extends BaseController
 
 		$getLog = $modelRegister->getLog($user);
 
-		echo view('layouts/header');
+		echo view('layouts/header2');
 		echo view('vwInvited',array("getLog" => $getLog[0]));
 		echo view('layouts/footer');
 	}
@@ -128,7 +128,7 @@ class registerController extends BaseController
 		$getLog = $modelRegister->getLog($user);
 		//var_dump ($getLog);
 
-		echo view('layouts/header');
+		echo view('layouts/header2');
 		echo view('vwAdmin',array("getLog" => $getLog[0]));
 		echo view('layouts/footer');
 	}
