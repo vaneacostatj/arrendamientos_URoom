@@ -36,8 +36,8 @@ class PropertyModel extends Model
         return $property->getResult();
     }
 
-    function getLogProp($document){
-        $sql ="SELECT * FROM createproperty WHERE Document LIKE '{$document}%'";
+    function getLogProp($User){
+        $sql ="SELECT * FROM createproperty WHERE Document LIKE '{$User}%'";
         $registerList = $this->db->query($sql);
         return $registerList->getResult();
     }
