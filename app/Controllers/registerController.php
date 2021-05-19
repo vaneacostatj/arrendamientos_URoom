@@ -101,6 +101,7 @@ class registerController extends BaseController
 		$modelRegister = new modelRegister();
 
 		$getLog = $modelRegister->getLog($user);
+		
 		echo view('layouts/header2');
 		echo view('vwHost',array("getLog" => $getLog[0]));
 		echo view('layouts/footer');
