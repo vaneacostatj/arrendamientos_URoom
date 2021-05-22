@@ -61,6 +61,7 @@ $routes->get('/login', 'registerController::readLogin');
 $routes->get('/readHost', 'registerController::readHost');
 $routes->get('/readAdmin', 'registerController::readAdmin');
 $routes->get('/readInvited', 'registerController::readInvited');
+$routes->post('/readReserve', 'registerController::readReserve');
 
 
 

@@ -1,21 +1,21 @@
 <?php
-var_dump($getLog);
+//var_dump($getLog);
 //var_dump($getLogProp);
-?>
-<div class="class" id="fondoHome">
-</br></br>
 
-<div class="container">
-    <div class="row">
+        $user= $getLog->user;
 
-
-        <?php 
-        
         foreach($property as $item){
 
            
-            $reservRoute = base_url()."";
+            $reservRoute = base_url("/public/readReserve?user={$user}")."";
             $template="
+            <div class='class' id='fondoHome'>
+            </br></br>
+            
+            <div class='container'>
+                <div class='row'>
+
+
             <div class='col-12 col-sm-12 col-md-6 col-lg-4'>
                 <div class='card text-white bg-secondary mb-3' style='width: 18rem;'>
                     <img src='{$item->photos}' class='card-img-top' alt='...'>
@@ -32,15 +32,14 @@ var_dump($getLog);
                     </div>
                 </div>
                 </br>
-            </div>";
+            </div>
+            
+    </div>
+    </div>
+    </div>";
 
             echo $template;
 
 
         }
 
-        ?>
-
-    </div>
-</div>
-</div>
