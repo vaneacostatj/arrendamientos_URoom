@@ -162,4 +162,16 @@ class registerController extends BaseController
 		echo view('layouts/footer');
 		//var_dump($getLog);
 	}
+
+	public function readReserve(){
+
+		/* $ModelRegister = new modelRegister();
+		$request = \Config\Services::request();
+		$id = $request->getGet('id');
+		$ModelReserve = $ModelRegister->getRegister($id); */
+		echo view('layouts/header2');
+		//echo view('reserve', array("ModelReserve" => $ModelReserve[0]));
+		echo view('reserve');
+		echo view('layouts/footer');
+	}
 }
