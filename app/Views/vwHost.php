@@ -19,6 +19,9 @@
     $Rol = $getLog->rol; 
     $Zip = $getLog->zip;   
     $id = $getLog->id;
+
+    $Reserve = base_url()."/public/indexReservas?user={$User}";
+    $updateRoute = base_url()."/public/updateRegister?id={$id}";
     
     $template="
     <div class='col-sm-4'>
@@ -34,7 +37,7 @@
               {$City}, {$Country}, {$State}</br>
               Zip: {$Zip}             
               </p>
-              <a href='---' class='btn btn-outline-dark'>Update</a>
+              <a href='{$updateRoute}' class='btn btn-outline-dark'>Update</a>
             </div>
           </div>
         </div>
@@ -79,6 +82,7 @@ $template2="
             </div>
             </div>
             <a href='{$addProperty}' class='btn btn-outline-dark'>Add Property</a>
+            <a href='{$Reserve}' class='btn btn-outline-dark'>Reserve</a>
           </div>";
 
             echo $template2;

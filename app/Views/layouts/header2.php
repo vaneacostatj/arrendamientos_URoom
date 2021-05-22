@@ -33,16 +33,14 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="<?php echo base_url() . '/public'; ?>">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url() . '/public/register/viewRegister'; ?>">Register</a>
-                    </li>
+                   
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Zone
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="<?php echo base_url() . '/public/ruralProperty'; ?>">Rural</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url() . '/public/urbanProperty'; ?>">Urban</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url() . '/public/rural'; ?>">Rural</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url() . '/public/urban'; ?>">Urban</a></li>
                         </ul>
                     </li>
 

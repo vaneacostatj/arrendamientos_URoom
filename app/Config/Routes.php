@@ -38,8 +38,11 @@ $routes->get('/login-signIn', 'controllerLogin::index');
 $routes->get('/login/viewLogin', 'controllerLogin::viewLogin');
 $routes->post('/signIn', 'controllerLogin::loginTask');
 
+$routes->get('/urban', 'controllerAddProperty::urban');
+$routes->get('/rural', 'controllerAddProperty::rural');
 $routes->get('/urbanProperty', 'controllerAddProperty::urbanProperty');
 $routes->get('/ruralProperty', 'controllerAddProperty::ruralProperty');
+$routes->get('/indexReservas', 'controllerAddProperty::indexReservas');
 $routes->get('/addProperty', 'controllerAddProperty::index');
 $routes->get('/addProperty/viewProperty', 'controllerAddProperty::viewProperty');
 $routes->post('/create', 'controllerAddProperty::create');

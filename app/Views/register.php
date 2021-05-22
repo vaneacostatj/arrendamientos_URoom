@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
 
-            <form class="row g-3 needs-validation" id="" action="<?php echo base_url();?>/public/createReg" action="<?php echo base_url();?>/updateEdit?id=<?php echo $task->id?>" method="POST" >
+            <form class="row g-3 needs-validation" id="" action="<?php echo base_url();?>/public/createReg"  method="POST" >
             <div class="col-md-4 grupo-input">
                     <label for="firstname" class="form-label">First name</label>
                     <input type="text" class="form-control form-input" id="firstname" value="<?php echo $taskUpdate->firstname; ?>" name="firstname" placeholder="Enter your name" title="Only letters and blanks">

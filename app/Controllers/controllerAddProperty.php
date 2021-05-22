@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\PropertyModel;
+use App\Models\modelRegister;
 
 class controllerAddProperty extends BaseController
 {
@@ -11,11 +12,27 @@ class controllerAddProperty extends BaseController
 		$session->start();
 		$taskproperty = new PropertyModel();
 		$resulProperty = $taskproperty->readproperty();
-		$data = array(
-			"property" => $resulProperty,
-		);
+		$data = array("property" => $resulProperty,);
 		echo view('layouts/header2');
 		echo view('vwProperty', $data);
+		echo view('layouts/footer');
+
+	}
+
+	public function indexReservas()
+	{	
+		$session = session();
+		$session->start();
+		$request = \Config\Services::request();	
+		$user = $request->getGet('user');
+		$modelRegister = new modelRegister();
+		$PropertyModel= new PropertyModel();
+
+		$getLog = $modelRegister->getLog($user);
+		$resulProperty = $PropertyModel->readproperty();
+		
+		echo view('layouts/header2');
+		echo view('indexReservas', array("getLog" => $getLog[0],"property" => $resulProperty));
 		echo view('layouts/footer');
 
 	}
@@ -42,6 +59,18 @@ class controllerAddProperty extends BaseController
 		echo view('urbanProperty',$data);
 		echo view('layouts/footer');
 	}
+	public function urban(){
+		
+
+		$taskproperty = new PropertyModel();
+		$resulProperty = $taskproperty->readproperty();
+		$data = array(
+			"property" => $resulProperty,
+		);
+		echo view('layouts/header2');
+		echo view('urban',$data);
+		echo view('layouts/footer');
+	}
 
 	public function ruralProperty(){
 
@@ -52,6 +81,17 @@ class controllerAddProperty extends BaseController
 		);
 		echo view('layouts/header');
 		echo view('ruralProperty',$data);
+		echo view('layouts/footer');
+	}
+	public function rural(){
+
+		$taskproperty = new PropertyModel();
+		$resulProperty = $taskproperty->readproperty();
+		$data = array(
+			"property" => $resulProperty,
+		);
+		echo view('layouts/header2');
+		echo view('rural',$data);
 		echo view('layouts/footer');
 	}
 

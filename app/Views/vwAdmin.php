@@ -16,6 +16,7 @@
     $id = $getLog->id;
     $updateRoute = base_url()."/public/updateRegister?id={$id}";
     $addProperty = base_url()."/public/addProperty/viewProperty";
+    $Reserve = base_url()."/public/indexReservas?id={$id}";
     $addUser = base_url()."/public/register/viewRegister";
     $users = base_url()."/public/register";
     $properties = base_url()."/public/addProperty";
@@ -75,6 +76,7 @@
     </br></br>
     <a href='{$addProperty}' class='btn btn-outline-dark'>Add Property</a>
     <a href='{$addUser}' class='btn btn-outline-dark'>Add User</a>
+    <a href='{$Reserve}' class='btn btn-outline-dark'>Reserve</a>
     
     
           </div>
