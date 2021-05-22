@@ -9,6 +9,8 @@ class registerController extends BaseController
  {
 	 public function index()
 	 {	
+		$session = session();
+		$session->start();
 		 $taskRegister = new modelRegister();
 		 $resultTasksRegister = $taskRegister->readRegister();
 		 $data =array(
@@ -16,7 +18,7 @@ class registerController extends BaseController
 			 
 		 );
  
-		 echo view('layouts/header');
+		 echo view('layouts/header2');
 		 echo view('vwRegister', $data);
 		 echo view('layouts/footer');
 	 }
@@ -29,7 +31,9 @@ class registerController extends BaseController
  
  
 	 public function createReg(){
- 
+
+ 		$session = session();
+		 $session->start();
 		 $request = \Config\Services::request();
 		 $modelRegister = new modelRegister();
  
@@ -75,7 +79,8 @@ class registerController extends BaseController
 	public function updateEdit()
 	{
 
-
+		$session = session();
+		$session->start();
 		$request = \Config\Services::request();
 		$modelRegister = new modelRegister();
 		$id = $request->getGet('id');
@@ -97,6 +102,8 @@ class registerController extends BaseController
 
 	public function readHost()
 	{
+		$session = session();
+		$session->start();
 		$request = \Config\Services::request();	
 		$user = $request->getGet('user');
 		$modelRegister = new modelRegister();
@@ -104,26 +111,30 @@ class registerController extends BaseController
 
 		$getLog = $modelRegister->getLog($user);
 		$getLogProp = $PropertyModel->getLogProp($user);
-		echo view('layouts/header');
+		echo view('layouts/header2');
 		echo view('vwHost',array("getLog" => $getLog[0], "getLogProp" => $getLogProp[0]));
 		echo view('layouts/footer');
 	}
 
 	public function readInvited()
 	{
+		$session = session();
+		$session->start();
 		$request = \Config\Services::request();	
 		$user = $request->getGet('user');
 		$modelRegister = new modelRegister();
 
 		$getLog = $modelRegister->getLog($user);
 
-		echo view('layouts/header');
+		echo view('layouts/header2');
 		echo view('vwInvited',array("getLog" => $getLog[0]));
 		echo view('layouts/footer');
 	}
 
 	public function readAdmin()
 	{
+		$session = session();
+		$session->start();
 		$request = \Config\Services::request();	
 		$user = $request->getGet('user');
 		$modelRegister = new modelRegister();
@@ -131,7 +142,7 @@ class registerController extends BaseController
 		$getLog = $modelRegister->getLog($user);
 		//var_dump ($getLog);
 
-		echo view('layouts/header');
+		echo view('layouts/header2');
 		echo view('vwAdmin',array("getLog" => $getLog[0]));
 		echo view('layouts/footer');
 	}
@@ -139,11 +150,12 @@ class registerController extends BaseController
 	public function readLogin()
 	{
 		$session = session();
+		$session->start();
 		$modelRegister = new modelRegister();
 		$User = $session->user;
 		$getLog = $modelRegister->getLog($User);
 
-		echo view('layouts/header');
+		echo view('layouts/header2');
 		echo view('login',array("getLog" => $getLog[0], ));
 		echo view('layouts/footer');
 		//var_dump($getLog);

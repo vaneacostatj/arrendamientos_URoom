@@ -7,12 +7,14 @@ class controllerAddProperty extends BaseController
 {
 	public function index()
 	{	
+		$session = session();
+		$session->start();
 		$taskproperty = new PropertyModel();
 		$resulProperty = $taskproperty->readproperty();
 		$data = array(
 			"property" => $resulProperty,
 		);
-		echo view('layouts/header');
+		echo view('layouts/header2');
 		echo view('vwProperty', $data);
 		echo view('layouts/footer');
 
@@ -20,13 +22,16 @@ class controllerAddProperty extends BaseController
 
 
 	public function viewProperty(){
+		$session = session();
+		$session->start();
 			
-		echo view('layouts/header');
+		echo view('layouts/header2');
 		echo view('addProperty');
 		echo view('layouts/footer');					
 	}
 
 	public function urbanProperty(){
+		
 
 		$taskproperty = new PropertyModel();
 		$resulProperty = $taskproperty->readproperty();
@@ -89,13 +94,15 @@ class controllerAddProperty extends BaseController
 	}
 
 	public function updateProperty(){
+		$session = session();
+		$session->start();
 
 		$propertyModel = new PropertyModel();
 		$request = \Config\Services::request();
 		$ID = $request->getGet('ID');
 		$property = $propertyModel->getProperty($ID);
 		//var_dump($property);
-		echo view('layouts/header');
+		echo view('layouts/header2');
 		echo view('updateProperty', array("property" => $property[0]));
 		echo view('layouts/footer');
 
