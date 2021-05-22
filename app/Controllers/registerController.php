@@ -168,11 +168,11 @@ class registerController extends BaseController
 		$ModelRegister = new modelRegister();
 		$request = \Config\Services::request();
 		$user = $request->getGet('user');
-		echo $user;
-		/* $getLog = $ModelRegister->getLog($user);
-		var_dump($getLog); */
-		/* echo view('layouts/header2');
+		
+		$getLog = $ModelRegister->getLog($user);
+		var_dump($getLog);
+		echo view('layouts/header2');
 		echo view('reserve', array("getLog" => $getLog[0]));
-		echo view('layouts/footer'); */
+		echo view('layouts/footer');
 	}
 }
