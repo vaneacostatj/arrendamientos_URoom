@@ -87,4 +87,4 @@
 ";
 echo $template;
 ?>
-    </div>
+</div>
