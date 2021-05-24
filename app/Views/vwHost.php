@@ -47,7 +47,7 @@
       </div>
    ";
         echo $template;
-
+    
         $photos = $getLogProp->photos;
         $Dwelling = $getLogProp->Dwelling;
         $Country = $getLogProp->Country;
@@ -58,35 +58,37 @@
         $deleteRoute = base_url() . "/public/deleteProperty?ID={$IDprop}";
         $updateRoute = base_url() . "/public/updateProperty?ID={$IDprop}";
         $addProperty = base_url() . "/public/addProperty/viewProperty";
+        
         $template2 = "
         <div class='col-sm-6'>
-        <div class='card'>
-          <div class='card-body'>
-            <div class='col-12 col-sm-12 col-md-6 col-lg-4'>
-                <div class='card' style='width: 18rem;'>
-                <img src='{$photos}' class='card-img-top' alt='...'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>{$Dwelling}</h5>
-                        <p class='card-text'>
-                        País: {$Country}
-                        City: {$City}</br>
-                        Location: {$Location}</br>
-                        Value: {$Location}
-                    
-                        </p>
-                        <a href='{$deleteRoute}' class='btn btn-danger'>delete</a>
-                        <a href='{$updateRoute}' class='btn btn-primary'>Update</a>
+          <div class='card'>
+                  <div class='card-body'>
+                    <div class='col-12 col-sm-12 col-md-6 col-lg-4'>
+                      <div class='card' style='width: 18rem;'>
+                       <img src='{$photos}' class='card-img-top' alt='...'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>{$Dwelling}</h5>
+                            <p class='card-text'>
+                            País: {$Country}
+                            City: {$City}</br>
+                            Location: {$Location}</br>
+                            Value: {$Location}
+                        
+                            </p>
+                            <a href='{$deleteRoute}' class='btn btn-danger'>delete</a>
+                            <a href='{$updateRoute}' class='btn btn-primary'>Update</a>
+                        </div>
+                      </div>
                     </div>
                 </div>
-               
             </div>
-            </div>
-            </div>
+            
             <a href='{$addProperty}' class='btn btn-outline-dark'>Add Property</a>
             <a href='{$Reserve}' class='btn btn-outline-dark'>Reserve</a>
           </div>";
 
         echo $template2;
+     
 
         ?>
 

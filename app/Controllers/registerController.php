@@ -110,9 +110,8 @@ class registerController extends BaseController
 		$PropertyModel= new PropertyModel();
 
 		$getLog = $modelRegister->getLog($user);
-
-
 		$getLogProp = $PropertyModel->getLogProp($user);
+		
 		echo view('layouts/header2');
 		echo view('vwHost',array("getLog" => $getLog[0], "getLogProp" => $getLogProp[0]));
 		echo view('layouts/footer');

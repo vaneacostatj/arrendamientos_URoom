@@ -1,95 +1,100 @@
 
-<div class="" id="">
-<!-- <div>
-    <img src="https://i.imgur.com/hhGpmFr.jpg" width="100%" class="img-fluid" alt="Responsive image">
-</div> -->
-
-
-
-<div class="card text-white bg-dark mb-3">
- 
-  <div class="card-body">
-    <h5 class="card-title text-center">Recommendation</h5>
-    <p class="card-text text-center">Remember the biosecurity rules for a better stay.</p>
-    <p class="card-text text-center"><small class="text-muted">The commitment is from us all</small></p>
-  </div>
-</div>
-
+ <div class="" id="fondoHome">
 </br></br>
-<div class="container" >
-    <div class="row">
 
-
-        <?php 
-        
-        foreach($property as $item){
-
-                $template="
-                <div class='col-12 col-sm-12 col-md-6 col-lg-4'>
-                    <div class='card text-white bg-secondary mb-3' style='width: 18rem;'>
-                        <img src='{$item->photos}' class='card-img-top' alt='...'>
-                        <div class='card-body'>
-                            <h5 class='card-title'>{$item->Dwelling}</h5>
-                            <p class='card-text'>
-                            País: {$item->Country}
-                            City: {$item->City}</br>
-                            Location: {$item->Location}</br>
-                            Value: {$item->Location}
-                        
-                            </p>
-                            <a href='#' class='btn btn-outline-warning'>Reserve</a>
-                        </div>
-                    </div>
+   
+      
+     
+   
+     
+     <?php
+     
+      
+        // var_dump($getLogProp);
+        /*   var_dump($getLog);
+          var_dump($getLogProp);	 */ 
+          $Firstname = $getLog->firstname;       
+          $Lastname = $getLog->lastname; 
+          $Email = $getLog->email;               
+          $Country = $getLog->country; 
+          $State = $getLog->state;               
+          $City = $getLog->city; 
+          $User = $getLog->user;                 
+          $Rol = $getLog->rol; 
+          $Zip = $getLog->zip;   
+          $id = $getLog->id;
+      
+          $Reserve = base_url()."/public/indexReservas?user={$User}";
+          $updateRoute = base_url()."/public/updateRegister?id={$id}";
+          
+          $template="
+          <div class='container'>
+          <div class='row'>
+          <div class='text-dark bg-light col-sm-4'>
+           
+              <div class='card-body'>
+                <div class='col-sm-12'>
+                  <div class='card'>
+                    <div class='card-body'>
+                    <img src='https://www.pngkey.com/png/detail/69-694700_profile-nuevo-usuario-icono.png' class='card-img-top' alt='...'>
                     </br>
-                </div>";
-    
-                echo $template;     
+                      <h5 class='card-title'>{$Rol}</h5>
+                      <p class='card-text'>{$Firstname} {$Lastname}</br>
+                      Email: {$Email} </br>
+                      {$City}, {$Country}, {$State}</br>
+                      Zip: {$Zip}             
+                      </p>
+                      <a href='{$updateRoute}' class='btn btn-outline-dark'>Update</a>
+                    </div>
+                  </div>
+                </div>              
+              </div>
+          </div>
+          <div class='col-sm-8'>
+           
+              <div class='card-body'>
+                <div class='col-sm-12'>
+                  <div class='card'>
+                    <div class='card-body'>
+                    <div class='d-md-flex flex-md-equal w-100 my-md-3 ps-md-3'>
+                    
+                    <div class='bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden'>
+                    <div class='my-3 py-3'>
+                      <h2 class='display-5'>Glamping la Fortuna</h2>
+                      </br>
+                      <p class='card-text'>tranquility, privacy and romance in one place.</p>
+                      </br>
+                    </div>
+                    <div class='bg-dark shadow-sm mx-auto' style='width: 80%; height: 300px; border-radius: 21px 21px 0 0;'>
+                    <img src='https://i.imgur.com/MPQmgNR.jpg' class='img-fluid' >
+                    </div>
+                  </div>
+                  <div class='bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden'>
+                  <div class='my-3 py-3'>
+                      <h2 class='display-5'>Termales San Vicente</h2>
+                      <p class='lead'>The most natural hot springs in Colombia.</p>
+                    </div>
+                    <div class='bg-dark shadow-sm mx-auto' style='width: 80%; height: 300px; border-radius: 21px 21px 0 0;'>
+                    <img src='https://i.imgur.com/KtYIIno.jpg' class='img-fluid' >
+                    
+                    </div></div>
 
-        }
+                    </div>
+                  
+                      <a href='{$Reserve}' class='btn btn-outline-dark'>See More</a>
+                    </div>
+                  </div>
+                </div>
+          
+            </div>
+          </div>
+          </div>
+          </div>
+         ";
+              echo $template;
 
-        ?>
-
+            ?>
+       
     </div>
 
-</div>
-<div class="card text-white bg-dark mb-3">
  
-  <div class="card-body">
-    <h5 class="card-title text-center">Contact us</h5>
-    <p class="card-text text-center"><i class="fas fa-phone-volume"></i> - 322 90 00 &nbsp &nbsp &nbsp <i class="fas fa-envelope-open-text"></i> - uroom@gmail.com &nbsp &nbsp &nbsp <i class="fab fa-whatsapp"></i> - 300 002 2323</i></p>
-    <p class="card-text text-center"><small class="text-muted">24 hour service</small></p>
-  </div>
-</div>
-<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="10000">
-      <img src="https://i.imgur.com/eL4jujY.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="https://i.imgur.com/C9d3251.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="https://i.imgur.com/WH91FXt.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</div>

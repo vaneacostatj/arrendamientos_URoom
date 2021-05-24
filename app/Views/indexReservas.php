@@ -1,3 +1,9 @@
+<div class="class" id="fondoHome">
+            </br></br>
+            
+            <div class="container">
+                <div class="row">
+
 <?php
 //var_dump($getLog);
 //var_dump($getLogProp);
@@ -9,11 +15,7 @@
            
             $reservRoute = base_url("/public/readReserve?user={$user}")."";
             $template="
-            <div class='class' id='fondoHome'>
-            </br></br>
-            
-            <div class='container'>
-                <div class='row'>
+     
 
 
             <div class='col-12 col-sm-12 col-md-6 col-lg-4'>
@@ -33,13 +35,13 @@
                 </div>
                 </br>
             </div>
-            
-    </div>
-    </div>
-    </div>";
+            ";
 
             echo $template;
 
 
         }
-
+?>
+</div>
+    </div>
+    </div>

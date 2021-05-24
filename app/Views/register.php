@@ -1,5 +1,5 @@
 <?php
-var_dump($getLog);
+//var_dump($getLog);
 ?>
 <div id="formReg">
 

@@ -1,10 +1,42 @@
-<div class="class" id="fondoHome">
+
 <div>
     <img src="https://i.imgur.com/hhGpmFr.jpg" width="100%" class="img-fluid" alt="Responsive image">
 </div>
+<div class="container">
 
+<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">Glamping la Fortuna</h2>
+        <p class="lead">tranquility, privacy and romance in one place.</p>
+      </div>
+      <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+      <img src="https://i.imgur.com/MPQmgNR.jpg" class="img-fluid" >
+      </div>
+    </div>
+    <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+    <div class="my-3 py-3">
+        <h2 class="display-5">Termales San Vicente</h2>
+        <p class="lead">The most natural hot springs in Colombia.</p>
+      </div>
+      <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+      <img src="https://i.imgur.com/KtYIIno.jpg" class="img-fluid" >
+      
+      </div></div>
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">San Luis Nativos</h2>
+        <p class="lead">tranquility and privacy.</p>        
+      </div>
+      <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+      <img src="https://i.imgur.com/ltwo5ZG.jpg"  class="img-fluid">
+      </div>
+    </div>
+   
+</div>
 
-
+</div>
+<div class="class" id="fondoHome">
 <div class="card text-white bg-dark mb-3">
  
   <div class="card-body">
@@ -92,3 +124,4 @@
   </button>
 </div>
 </div>
+
