@@ -164,14 +164,17 @@ class registerController extends BaseController
 
 	public function readReserve(){
 
-		$ModelRegister = new modelRegister();
 		$request = \Config\Services::request();
 		$user = $request->getGet('user');
 		
-		$getLog = $ModelRegister->getLog($user);
-		var_dump($getLog);
+		$modelRegister = new modelRegister();
+		$PropertyModel= new PropertyModel();
+
+		$getLog = $modelRegister->getLog($user);
+		$getLogProp = $PropertyModel->getLogProp($user);
+		
 		echo view('layouts/header2');
-		echo view('reserve', array("getLog" => $getLog[0]));
+		echo view('reserve',array("getLog" => $getLog[0], "getLogProp" => $getLogProp[0]));
 		echo view('layouts/footer');
 	}
 }

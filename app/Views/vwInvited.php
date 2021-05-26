@@ -1,11 +1,6 @@
 
  <div class="" id="fondoHome">
 </br></br>
-
-   
-      
-     
-   
      
      <?php
      
@@ -89,7 +84,7 @@
             </div>
           </div>
           </div>
-          </div>
+          </div>  
          ";
               echo $template;
 
