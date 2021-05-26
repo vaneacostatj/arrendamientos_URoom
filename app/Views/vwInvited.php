@@ -88,42 +88,45 @@
               echo $template;
 
 
+              $total = $getReserve->night_value * $getReserve->number_of_people;
+ 
               $template3 = "
-                  <div class='p-5'>
-                  <table class='table table-dark table-striped'>
-                  <thead>
-                    <tr>
-                      <th scope='col'>#</th>
-                      <th scope='col'>First</th>
-                      <th scope='col'>Last</th>
-                      <th scope='col'>Handle</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope='row'>1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                    </tr>
-                    <tr>
-                      <th scope='row'>2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                    </tr>
-                    <tr>
-                      <th scope='row'>3</th>
-                      <td colspan='2'>Larry the Bird</td>
-                      <td>@twitter</td>
-                    </tr>
-                  </tbody>
-                  </table>
-                  </div>
-                  </div>";
-                    
-                            
-                  echo $template3;
+              <div class='p-5'>
+              <table class='table table-dark table-striped'>
+              <thead>
+                <tr>
+                  <th scope='col'>#</th>
+                  <th scope='col'>First Name</th>
+                  <th scope='col'>Last Name</th>
+                  <th scope='col'>Arrival Date</th>
+                  <th scope='col'>Departure Date</th>
+                  <th scope='col'>Amount to be Paid</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope='row'>1</th>
+                  <td>{$getReserve->firstname}</td>
+                  <td>{$getReserve->lastname}</td>
+                  <td>{$getReserve->arrival_date}</td>
+                  <td>{$getReserve->departure_date}</td>
+                  <td>{$total}</td>
+                </tr>
+                <tr>
+                  <th scope='row'>2</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+             
+              </tbody>
+             </table>
+             </div>
+             </div>";
+
+             echo $template3;
 
             ?>
        

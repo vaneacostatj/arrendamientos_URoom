@@ -135,11 +135,14 @@ class registerController extends BaseController
 		$request = \Config\Services::request();	
 		$user = $request->getGet('user');
 		$modelRegister = new modelRegister();
+		$modelReserve= new modelReserve();
+
 
 		$getLog = $modelRegister->getLog($user);
+		$getReserve = $modelReserve->getReserve($user);
 
 		echo view('layouts/header2');
-		echo view('vwInvited',array("getLog" => $getLog[0]));
+		echo view('vwInvited',array("getLog" => $getLog[0], "getReserve" => $getReserve[0]));
 		echo view('layouts/footer');
 	}
 
