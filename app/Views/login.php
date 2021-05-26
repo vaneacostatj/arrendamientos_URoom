@@ -11,6 +11,7 @@ $rol = $getLog->rol;
 $loginAdmin = base_url()."/public/readAdmin?user={$user}";
 $loginHost = base_url()."/public/readHost?user={$user}";
 $loginInvited = base_url()."/public/readInvited?user={$user}";
+$loginError = base_url()."/public/";
 /* echo $User;
 echo $pass; */
 
@@ -65,4 +66,17 @@ if ($User == $user && $Pass == $pass) {
       
     }
   }
+}
+else{
+  $template="
+  <div class='container'>
+    <div class='row'>
+    <img src='https://i.imgur.com/nV7u85w.jpg'>    
+    <a href='{$loginError}'  class='btn btn-outline-dark' >Try again</a>  
+    </div>
+  </div>
+  ";
+  echo $template;
+  
+
 }

@@ -1,5 +1,5 @@
 
-<div class="class" id="">
+<div class="class" id="fondoHome">
 <?php 
 	//var_dump($getLogProp);
    // var_dump($getLog->rol);	 
@@ -20,6 +20,7 @@
     $addUser = base_url()."/public/register/viewRegister";
     $users = base_url()."/public/register";
     $properties = base_url()."/public/addProperty";
+    $wachu = base_url()."/public/vwReserve";
     
     $template="
     </br></br>
@@ -27,7 +28,7 @@
     <div class='row'>
     <div class='row'>
       <div class='col-sm-4'>
-        <div class='card'>
+        <div class='card text-dark bg-light'>
           <div class='card-body'>
 
           <div class='col-sm-12'>
@@ -77,6 +78,7 @@
     <a href='{$addProperty}' class='btn btn-outline-dark'>Add Property</a>
     <a href='{$addUser}' class='btn btn-outline-dark'>Add User</a>
     <a href='{$Reserve}' class='btn btn-outline-dark'>Reserve</a>
+    <a href='{$wachu}' class='btn btn-outline-dark'>View reserve</a>
     
     
           </div>

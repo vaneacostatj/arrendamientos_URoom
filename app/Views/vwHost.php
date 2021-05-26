@@ -1,8 +1,7 @@
-<div class="class" id="fondoUSER">
+<div class="class" id="fondoHome">
   </br></br>
-  <div class='container'>
-    <div class='row'>
-      <div class='row'>
+    
+     
 
         <?php
 
@@ -25,8 +24,11 @@
     $updateRoute = base_url()."/public/updateRegister?id={$id}";
     
     $template="
-    <div class='col-sm-4'>
-    <div class='card'>
+    
+  <div class='container'>
+    <div class='row'>
+    <div class='col-sm-4 '>
+    <div class='card text-dark bg-light'>
       <div class='card-body'>
           <div class='col-sm-12'>
           <div class='card'>
@@ -61,7 +63,7 @@
         
         $template2 = "
         <div class='col-sm-6'>
-          <div class='card'>
+          <div class='card text-dark bg-light'>
                   <div class='card-body'>
                     <div class='col-12 col-sm-12 col-md-6 col-lg-4'>
                       <div class='card' style='width: 18rem;'>
@@ -85,17 +87,95 @@
             
             <a href='{$addProperty}' class='btn btn-outline-dark'>Add Property</a>
             <a href='{$Reserve}' class='btn btn-outline-dark'>Reserve</a>
+          </div>
           </div>";
 
         echo $template2;
-     
 
-        ?>
 
-      </div>
-    </div>
-  </div>
-  </br>
+ 
+ $template3 = "
+ <div class='p-5'>
+ <table class='table table-dark table-striped'>
+ <thead>
+   <tr>
+     <th scope='col'>#</th>
+     <th scope='col'>First</th>
+     <th scope='col'>Last</th>
+     <th scope='col'>Handle</th>
+   </tr>
+ </thead>
+ <tbody>
+   <tr>
+     <th scope='row'>1</th>
+     <td>Mark</td>
+     <td>Otto</td>
+     <td>@mdo</td>
+   </tr>
+   <tr>
+     <th scope='row'>2</th>
+     <td>Jacob</td>
+     <td>Thornton</td>
+     <td>@fat</td>
+   </tr>
+   <tr>
+     <th scope='row'>3</th>
+     <td colspan='2'>Larry the Bird</td>
+     <td>@twitter</td>
+   </tr>
+ </tbody>
+</table>
+</div>
+</div>";
+   
+           
+echo $template3;
+
+?>
+  
+ </div>
+
+
+
 
   <?php // prueba ----------------------------------------------------------
+/* foreach($getLogProp as $item){
+
+  $deleteRoute = base_url() . "/public/deleteProperty?ID={$item->ID}";
+  $updateRoute = base_url() . "/public/updateProperty?ID={$item->ID}";
+  $addProperty = base_url() . "/public/addProperty/viewProperty";
+  
+  
+  
+  $template2 = "
+  <div class='col-sm-6'>
+  <div class='card'>
+          <div class='card-body'>
+            <div class='col-12 col-sm-12 col-md-6 col-lg-4'>
+              <div class='card' style='width: 18rem;'>
+               <img src='{$item->photos}' class='card-img-top' alt='...'>
+                <div class='card-body'>
+                    <h5 class='card-title'>{$item->Dwelling}</h5>
+                    <p class='card-text'>
+                    País: {$item->Country}
+                    City: {$item->City}</br>
+                    Location: {$item->Location}</br>
+                    Value: {$item->Value}
+                
+                    </p>
+                    <a href='{$deleteRoute}' class='btn btn-danger'>delete</a>
+                    <a href='{$updateRoute}' class='btn btn-primary'>Update</a>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    
+    <a href='{$addProperty}' class='btn btn-outline-dark'>Add Property</a>
+    <a href='{$Reserve}' class='btn btn-outline-dark'>Reserve</a>
+  </div>";
+  
+  echo $template2;
+  }
+ */
   ?>

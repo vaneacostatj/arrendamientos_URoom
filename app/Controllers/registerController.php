@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\modelRegister;
 use App\Models\PropertyModel;
+use App\Models\modelReserve;
 
 class registerController extends BaseController
  {
@@ -50,7 +51,7 @@ class registerController extends BaseController
 
 		 
 		 $modelRegister->register($firstname, $lastname, $email, $country, $state, $city, $user, $password, $rol, $zip);
-		 return redirect()->to('/public/register');
+		 return redirect()->to('/public');
  
 		 
 	 }
@@ -108,12 +109,22 @@ class registerController extends BaseController
 		$user = $request->getGet('user');
 		$modelRegister = new modelRegister();
 		$PropertyModel= new PropertyModel();
+		$modelReserve= new modelReserve();
 
 		$getLog = $modelRegister->getLog($user);
 		$getLogProp = $PropertyModel->getLogProp($user);
+		$getReserve = $modelReserve->getReserve($user);
+
+		$dataU = array(
+			"getLog" => $getLog[0], 
+			"getLogProp" => $getLogProp[0],
+			"getReserve" => $getReserve[0],
+
+		);
+		
 		
 		echo view('layouts/header2');
-		echo view('vwHost',array("getLog" => $getLog[0], "getLogProp" => $getLogProp[0]));
+		echo view('vwHost',$dataU);
 		echo view('layouts/footer');
 	}
 
@@ -164,14 +175,17 @@ class registerController extends BaseController
 
 	public function readReserve(){
 
-		$ModelRegister = new modelRegister();
 		$request = \Config\Services::request();
 		$user = $request->getGet('user');
 		
-		$getLog = $ModelRegister->getLog($user);
-		var_dump($getLog);
+		$modelRegister = new modelRegister();
+		$PropertyModel= new PropertyModel();
+
+		$getLog = $modelRegister->getLog($user);
+		$getLogProp = $PropertyModel->getLogProp($user);
+		
 		echo view('layouts/header2');
-		echo view('reserve', array("getLog" => $getLog[0]));
+		echo view('reserve',array("getLog" => $getLog[0], "getLogProp" => $getLogProp[0]));
 		echo view('layouts/footer');
 	}
 }

@@ -6,7 +6,7 @@
 <div class="container p-5">
     <div class="row">
 
-        <form class="row g-3 needs-validation" id="" action="<?php echo base_url(); ?>/public/createReg" method="POST">
+        <form class="row g-3 needs-validation" id="form-validate" action="<?php echo base_url(); ?>/public/createReg" method="POST">
 
             <div class="col-md-4 grupo-input">
                 <label for="firstname" class="form-label">First name</label>

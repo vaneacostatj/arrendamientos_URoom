@@ -13,7 +13,7 @@ class controllerLogin extends BaseController
 		$session = session();
 		$session->destroy();
 		echo view('layouts/header');
-		echo view('Home');
+		echo view('loginError');
 		echo view('layouts/footer');
 	}
 
@@ -32,9 +32,6 @@ class controllerLogin extends BaseController
 			];
 			$session->set($newdata);
 			return redirect()->to('/public/login');
-
-
-
 		} else {
 
 			//$message="You don't have access to continue";
