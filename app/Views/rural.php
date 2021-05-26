@@ -1,19 +1,19 @@
-<div class="class" id="fondoHome">
-</br></br>
+<div class="" id="fondoHome2">
+    </br></br>
 
-<div class="container">
-    <div class="row">
+    <div class="container p-5">
+        <div class="row">
 
 
-        <?php 
-        
-        foreach($property as $item){
+            <?php
 
-            if($item->Zone == "Rural"){
+            foreach ($property as $item) {
 
-                $Reserve = base_url()."/public/indexReservas?ID={$item->ID}";
+                if ($item->Zone == "Rural") {
 
-                $template="                
+                    $Reserve = base_url() . "/public/indexReservas?ID={$item->ID}";
+
+                    $template = "                
                 <div class='col-12 col-sm-12 col-md-6 col-lg-4'>
                     <div class='card text-white bg-secondary mb-3' style='width: 18rem;'>
                         <img src='{$item->photos}' class='card-img-top' alt='...'>
@@ -31,16 +31,14 @@
                     </div>
                     </br>
                 </div>";
-    
-                echo $template;
-    
-            };         
 
-        };  
-        
+                    echo $template;
+                };
+            };
 
-        ?>
 
+            ?>
+
+        </div>
     </div>
-</div>
 </div>

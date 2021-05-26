@@ -1,4 +1,4 @@
-<div class="class" id="fondoHome">
+<div class="" id="fondoHome">
 </br></br>
 
 <div class="container">
@@ -34,7 +34,7 @@
     
             };         
 
-        }
+        };
 
         ?>
 

@@ -2,7 +2,7 @@
 <div>
     <img src="https://i.imgur.com/hhGpmFr.jpg" width="100%" class="img-fluid" alt="Responsive image">
 </div>
-<div class="container">
+<div class="container d-flex aling-items-center justify-content-center">
 
 <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
@@ -47,7 +47,7 @@
 </div>
 
 </br></br>
-<div class="container" >
+<div class="container d-flex aling-items-center justify-content-center alto-100" >
     <div class="row">
 
 

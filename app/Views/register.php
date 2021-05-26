@@ -3,7 +3,7 @@
 ?>
 <div id="formReg">
 
-<div class="container">
+<div class="container p-5">
     <div class="row">
 
         <form class="row g-3 needs-validation" id="" action="<?php echo base_url(); ?>/public/createReg" method="POST">
