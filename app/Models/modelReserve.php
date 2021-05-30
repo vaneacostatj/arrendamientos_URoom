@@ -9,8 +9,7 @@ class modelReserve extends Model
 {
     function reserve($firstname, $lastname, $property_code, $arrival_date, $user, $night_value, $number_of_people, $departure_date){
         
-        $sql ="INSERT INTO reserve(firstname, lastname,
-         property_code, arrival_date, user, night_value, number_of_people, departure_date)VALUES('{$firstname}','{$lastname}','{$property_code}','{$arrival_date}','{$user}','{$night_value}','{$number_of_people}','{$departure_date}')";
+        $sql="INSERT INTO reserve(firstname,lastname,property_code,arrival_date,user,night_value,number_of_people,departure_date)VALUES('{$firstname}','{$lastname}','{$property_code}','{$arrival_date}','{$user}','{$night_value}','{$number_of_people}','{$departure_date}')";
 
         $this->db->query($sql);
        

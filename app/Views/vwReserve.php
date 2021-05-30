@@ -3,33 +3,38 @@
 <br>
 <div class="container">
     <div class="row">
-
+    <div class='p-5'>
+        <table class='table table-dark table-striped'>
+        <thead>
+        <tr>
+            <th scope='col'>#</th>
+            <th scope='col'>First Name</th>
+            <th scope='col'>Last Name</th>
+            <th scope='col'>Arrival Date</th>
+            <th scope='col'>Departure Date</th>
+            <th scope='col'>Amount to be Paid</th>
+            <th scope='col'></th>
+        </tr>
+        </thead>
+        <tbody>
+       
+ 
 
         <?php 
         foreach($reserve as $item){
-
+                $total = $item->night_value * $item->number_of_people;
                 $deleteRoute = base_url()."/public/deleteReserve?id={$item->id}";
-                $template ="   
-
-                <div class='col-12 col-sm-12 col-md-6 col-lg-4'>
-                    <div class='card' style='width: 18rem;'>
-                        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1200px-User_icon_2.svg.png' class='card-img-top' alt='...'>
-                        <div class='card-body'>
-                            <h5 class='card-title'> {$item->firstname} </h5>
-                            <p class='card-text'>
-                            
-                            Firstname: {$item->firstname}                   Lastname: {$item->lastname} 
-                            property_code: {$item->property_code}           arrival_date: {$item->arrival_date} 
-                            user: {$item->user}                             night_value: {$item->night_value} 
-                            number_of_people: {$item->number_of_people}     departure_date: {$item->departure_date}       
-                            
-                            </p>
-                            <a href='{$deleteRoute}' class='btn btn-danger'> Delete </a>
-                        </div>
-                    </div> 
-                    </br>
-                 </div> ";
-
+                $template ="  
+                <tr> 
+                <th scope='row'>{$item->id}</th>              
+                <td>{$item->firstname}</td>
+                <td>{$item->lastname}</td>
+                <td>{$item->arrival_date}</td>
+                <td>{$item->departure_date}</td>
+                <td>{$total}</td>
+                <td><a href='{$deleteRoute}' class='btn btn-outline-danger'>Delete</a></td>
+                </tr>";
+            
 
                 echo $template;
 
@@ -43,7 +48,12 @@
 
 
         ?>
+           
 
+            </tbody>
+            </table>
+            </div>
+            </div>
     </div>
 </div>
 

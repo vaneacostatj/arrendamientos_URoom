@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 
 class modelRegister extends Model
 {
-    function register($firstname, $lastname, $email, $country, $state, $city, $user, $password, $rol, $zip){
+    function userregister($firstname, $lastname, $email, $country, $state, $city, $user, $password, $rol, $zip){
         
         $sql ="INSERT INTO userregister(firstname, lastname, email, country, state, city, user, password, rol, zip)VALUES('{$firstname}','{$lastname}','{$email}','{$country}','{$state}','{$city}','{$user}','{$password}','{$rol}','{$zip}')";
 

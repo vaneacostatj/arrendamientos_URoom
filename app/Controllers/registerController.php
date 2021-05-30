@@ -11,17 +11,35 @@ class registerController extends BaseController
 	 public function index()
 	 {	
 		$session = session();
-		$session->start();
 		 $taskRegister = new modelRegister();
 		 $resultTasksRegister = $taskRegister->readRegister();
-		 $data =array(
-			 "createRegister"=>$resultTasksRegister,
-			 
-		 );
+
+		 if ($session->user != "" || $session->user != null && $session->password != "" || $session->password != null){
+			$data =array(
+				"createRegister"=>$resultTasksRegister,		
+			);
+					
+			echo view('layouts/header2');
+			echo view('vwRegister', $data);
+			echo view('layouts/footer');
+
+		 }
+		 else{
+			$loginError = base_url()."/public/";
+			echo view('layouts/header2');
+
+			$template="
+			<div class='container'>
+			  <div class='row'>
+			  <img src='https://i.imgur.com/nV7u85w.jpg'>    
+			  <a href='{$loginError}'  class='btn btn-outline-dark' >Try again</a>  
+			  </div>
+			</div>
+			";
+			echo $template;
+			echo view('layouts/footer');
+		 }
  
-		 echo view('layouts/header2');
-		 echo view('vwRegister', $data);
-		 echo view('layouts/footer');
 	 }
  
 	 public function viewRegister(){
@@ -67,21 +85,39 @@ class registerController extends BaseController
 
 	public function updateRegister()
 	{
-		$ModelRegister = new modelRegister();
-		$request = \Config\Services::request();
-		$id = $request->getGet('id');
-		$ModelUpdate = $ModelRegister->getRegister($id);
-		echo view('layouts/header');
-		echo view('vwUpdate', array("ModelUpdate" => $ModelUpdate[0]));
-		echo view('layouts/footer');
+		$session = session();
+
+		if ($session->user != "" || $session->user != null && $session->password != "" || $session->password != null){
+			$ModelRegister = new modelRegister();
+			$request = \Config\Services::request();
+			$id = $request->getGet('id');
+			$ModelUpdate = $ModelRegister->getRegister($id);
+			echo view('layouts/header');
+			echo view('vwUpdate', array("ModelUpdate" => $ModelUpdate[0]));
+			echo view('layouts/footer');
+		}
+		else{
+			$loginError = base_url()."/public/";
+			echo view('layouts/header2');
+
+			$template="
+			<div class='container'>
+			  <div class='row'>
+			  <img src='https://i.imgur.com/nV7u85w.jpg'>    
+			  <a href='{$loginError}'  class='btn btn-outline-dark' >Try again</a>  
+			  </div>
+			</div>
+			";
+			echo $template;
+			echo view('layouts/footer');
+		 }
+		
 		//var_dump($ModelUpdate);
 	}
 
 	public function updateEdit()
 	{
 
-		$session = session();
-		$session->start();
 		$request = \Config\Services::request();
 		$modelRegister = new modelRegister();
 		$id = $request->getGet('id');
@@ -104,91 +140,182 @@ class registerController extends BaseController
 	public function readHost()
 	{
 		$session = session();
-		$session->start();
-		$request = \Config\Services::request();	
-		$user = $request->getGet('user');
-		$modelRegister = new modelRegister();
-		$PropertyModel= new PropertyModel();
-		$modelReserve= new modelReserve();
 
-		$getLog = $modelRegister->getLog($user);
-		$getLogProp = $PropertyModel->getLogProp($user);
-		$getReserve = $modelReserve->getReserve($user);
+		if ($session->user != "" || $session->user != null && $session->password != "" || $session->password != null){
+			$request = \Config\Services::request();	
+			$user = $request->getGet('user');
+			$modelRegister = new modelRegister();
+			$PropertyModel= new PropertyModel();
+			$modelReserve= new modelReserve();
 
-		$dataU = array(
-			"getLog" => $getLog[0], 
-			"getLogProp" => $getLogProp[0],
-			"getReserve" => $getReserve[0],
+			$getLog = $modelRegister->getLog($user);
+			$getLogProp = $PropertyModel->getLogProp($user);
+			$getReserve = $modelReserve->getReserve($user);
 
-		);
+			$dataU = array(
+				"getLog" => $getLog[0], 
+				"getLogProp" => $getLogProp[0],
+				"getReserve" => $getReserve[0],
+
+			);
 		
 		
-		echo view('layouts/header2');
-		echo view('vwHost',$dataU);
-		echo view('layouts/footer');
+			echo view('layouts/header2');
+			echo view('vwHost',$dataU);
+			echo view('layouts/footer');
+		}
+		else{
+			$loginError = base_url()."/public/";
+			echo view('layouts/header2');
+
+			$template="
+			<div class='container'>
+			  <div class='row'>
+			  <img src='https://i.imgur.com/nV7u85w.jpg'>    
+			  <a href='{$loginError}'  class='btn btn-outline-dark' >Try again</a>  
+			  </div>
+			</div>
+			";
+			echo $template;
+			echo view('layouts/footer');
+		 }
+		
 	}
 
 	public function readInvited()
 	{
 		$session = session();
-		$session->start();
-		$request = \Config\Services::request();	
-		$user = $request->getGet('user');
-		$modelRegister = new modelRegister();
-		$modelReserve= new modelReserve();
+
+		if ($session->user != "" || $session->user != null && $session->password != "" || $session->password != null){
+			$request = \Config\Services::request();	
+			$user = $request->getGet('user');
+			$modelRegister = new modelRegister();
+			$modelReserve= new modelReserve();
 
 
-		$getLog = $modelRegister->getLog($user);
-		$getReserve = $modelReserve->getReserve($user);
+			$getLog = $modelRegister->getLog($user);
+			$getReserve = $modelReserve->getReserve($user);
 
-		echo view('layouts/header2');
-		echo view('vwInvited',array("getLog" => $getLog[0], "getReserve" => $getReserve[0]));
-		echo view('layouts/footer');
+			echo view('layouts/header2');
+			echo view('vwInvited',array("getLog" => $getLog[0], "getReserve" => $getReserve[0]));
+			echo view('layouts/footer');
+		}
+		else{
+			$loginError = base_url()."/public/";
+			echo view('layouts/header2');
+
+			$template="
+			<div class='container'>
+			  <div class='row'>
+			  <img src='https://i.imgur.com/nV7u85w.jpg'>    
+			  <a href='{$loginError}'  class='btn btn-outline-dark' >Try again</a>  
+			  </div>
+			</div>
+			";
+			echo $template;
+			echo view('layouts/footer');
+		 }
 	}
+		
 
 	public function readAdmin()
 	{
 		$session = session();
-		$session->start();
-		$request = \Config\Services::request();	
-		$user = $request->getGet('user');
-		$modelRegister = new modelRegister();
 
-		$getLog = $modelRegister->getLog($user);
+		if ($session->user != "" || $session->user != null && $session->password != "" || $session->password != null){
+			$request = \Config\Services::request();	
+			$user = $request->getGet('user');
+			$modelRegister = new modelRegister();
+
+			$getLog = $modelRegister->getLog($user);
 		//var_dump ($getLog);
 
-		echo view('layouts/header2');
-		echo view('vwAdmin',array("getLog" => $getLog[0]));
-		echo view('layouts/footer');
+			echo view('layouts/header2');
+			echo view('vwAdmin',array("getLog" => $getLog[0]));
+			echo view('layouts/footer');
+		}
+		else{
+			$loginError = base_url()."/public/";
+			echo view('layouts/header2');
+
+			$template="
+			<div class='container'>
+			  <div class='row'>
+			  <img src='https://i.imgur.com/nV7u85w.jpg'>    
+			  <a href='{$loginError}'  class='btn btn-outline-dark' >Try again</a>  
+			  </div>
+			</div>
+			";
+			echo $template;
+			echo view('layouts/footer');
+		 }
 	}
 
 	public function readLogin()
 	{
 		$session = session();
-		$session->start();
-		$modelRegister = new modelRegister();
-		$User = $session->user;
-		$getLog = $modelRegister->getLog($User);
 
-		echo view('layouts/header2');
-		echo view('login',array("getLog" => $getLog[0], ));
-		echo view('layouts/footer');
-		//var_dump($getLog);
+		if ($session->user != "" || $session->user != null && $session->password != "" || $session->password != null){
+			$modelRegister = new modelRegister();
+			$User = $session->user;
+			$getLog = $modelRegister->getLog($User);
+
+			echo view('layouts/header2');
+			echo view('login',array("getLog" => $getLog[0]));
+			echo view('layouts/footer');
+			//echo "Oe!";
+		}
+		else{
+			$loginError = base_url()."/public/";
+			echo view('layouts/header2');
+
+			$template="
+			<div class='container'>
+			  <div class='row'>
+			  <img src='https://i.imgur.com/nV7u85w.jpg'>    
+			  <a href='{$loginError}'  class='btn btn-outline-dark' >Try again</a>  
+			  </div>
+			</div>
+			";
+			echo $template;
+			echo view('layouts/footer');
+		 }
+		/* var_dump($session->user); */
 	}
 
 	public function readReserve(){
 
-		$request = \Config\Services::request();
-		$user = $request->getGet('user');
-		
-		$modelRegister = new modelRegister();
-		$PropertyModel= new PropertyModel();
+		$session = session();
 
-		$getLog = $modelRegister->getLog($user);
-		$getLogProp = $PropertyModel->getLogProp($user);
+		if ($session->user != "" || $session->user != null && $session->password != "" || $session->password != null){
+			$request = \Config\Services::request();
+			$user = $request->getGet('user');
 		
-		echo view('layouts/header2');
-		echo view('reserve',array("getLog" => $getLog[0], "getLogProp" => $getLogProp[0]));
-		echo view('layouts/footer');
+			$modelRegister = new modelRegister();
+			$PropertyModel= new PropertyModel();
+
+			$getLog = $modelRegister->getLog($user);
+			$getLogProp = $PropertyModel->getLogProp($user);
+		
+			echo view('layouts/header2');
+			echo view('reserve',array("getLog" => $getLog[0], "getLogProp" => $getLogProp[0]));
+			echo view('layouts/footer');
+		}
+		 else{
+			$loginError = base_url()."/public/";
+			echo view('layouts/header2');
+
+			$template="
+			<div class='container'>
+			  <div class='row'>
+			  <img src='https://i.imgur.com/nV7u85w.jpg'>    
+			  <a href='{$loginError}'  class='btn btn-outline-dark' >Try again</a>  
+			  </div>
+			</div>
+			";
+			echo $template;
+			echo view('layouts/footer');
+		 }
+		
 	}
 }

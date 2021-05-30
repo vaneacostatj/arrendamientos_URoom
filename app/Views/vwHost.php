@@ -77,7 +77,7 @@
                             Value: {$Location}
                         
                             </p>
-                            <a href='{$deleteRoute}' class='btn btn-danger'>delete</a>
+                            <a href='https://www.google.com/intl/es-419/gmail/about/' class='btn btn-outline-danger'>Delete request</a>
                             <a href='{$updateRoute}' class='btn btn-primary'>Update</a>
                         </div>
                       </div>
@@ -105,6 +105,7 @@
      <th scope='col'>Arrival Date</th>
      <th scope='col'>Departure Date</th>
      <th scope='col'>Amount to be Paid</th>
+     <th scope='col'></th>
    </tr>
  </thead>
  <tbody>
@@ -115,9 +116,11 @@
      <td>{$getReserve->arrival_date}</td>
      <td>{$getReserve->departure_date}</td>
      <td>{$total}</td>
+     <td><a href='https://www.google.com/intl/es-419/gmail/about/' class='btn btn-outline-danger'>Delete request</a></td>
    </tr>
    <tr>
      <th scope='row'>2</th>
+     <td></td>
      <td></td>
      <td></td>
      <td></td>

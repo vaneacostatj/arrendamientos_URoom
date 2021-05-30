@@ -8,13 +8,12 @@ use App\Models\modelRegister;
 class controllerLogin extends BaseController
 {
 
-	public function index()
+	public function exit()
 	{
 		$session = session();
 		$session->destroy();
-		echo view('layouts/header');
-		echo view('loginError');
-		echo view('layouts/footer');
+		$data = base_url()."/public/";
+		return redirect()->to($data);
 	}
 
 	public function loginTask()
@@ -23,12 +22,35 @@ class controllerLogin extends BaseController
 		$user = $request->getPost('userlog');
 		$password = $request->getPost('pass');
 
+		$modelRegister = new modelRegister();
+		$getLog = $modelRegister->getLog($user);
+
+		$Firstname = $getLog->firstname;       
+		$Lastname = $getLog->lastname; 
+		$Email = $getLog->email;               
+		$Country = $getLog->country; 
+		$State = $getLog->state;               
+		$City = $getLog->city; 		                 
+		$Rol = $getLog->rol; 
+		$Zip = $getLog->zip;   
+		$id = $getLog->id;
+		
+
 		if ($user != "" || $user != null && $password != "" || $password != null) {
 
 			$session = session();
 			$newdata = [
-				'user'  => $user,
-				'password'  => $password,		
+				'firstname'=>$Firstname,       
+				'lastname'=>$Lastname,  
+				'email'=>$Email,                
+				'country'=>$Country, 
+				'state'=>$State,               
+				'city'=>$City,  
+				'user'=>$user,                  
+				'rol'=>$Rol, 
+				'zip'=>$Zip,   
+				'id'=>$id, 
+				'password'=>$password,				
 			];
 			$session->set($newdata);
 			return redirect()->to('/public/login');

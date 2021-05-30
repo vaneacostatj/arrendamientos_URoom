@@ -34,7 +34,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-$routes->get('/singOut', 'controllerLogin::index');
+$routes->get('/singOut', 'controllerLogin::exit');
 $routes->get('/login/viewLogin', 'controllerLogin::viewLogin');
 $routes->post('/signIn', 'controllerLogin::loginTask');
 
@@ -64,7 +64,7 @@ $routes->get('/readInvited', 'registerController::readInvited');
 $routes->get('/readReserve', 'registerController::readReserve');
 
 $routes->get('/vwReserve', 'controllerReserve::index');
-$routes->get('/readReserve', 'controllerReserve::addReserve');
+$routes->post('/addReserve', 'controllerReserve::addReserve');
 $routes->get('/deleteReserve', 'controllerReserve::deleteReserve');
 
 

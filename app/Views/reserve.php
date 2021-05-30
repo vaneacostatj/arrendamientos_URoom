@@ -38,14 +38,14 @@
 var_dump($getLog); */
 
 
-$Email = $getLog->email;               
-$Country = $getLog->country; 
-$State = $getLog->state;               
-$City = $getLog->city; 
-$User = $getLog->user;                 
-$Rol = $getLog->rol; 
-$Zip = $getLog->zip;   
-$id = $getLog->id;
+$Email = $session->email;               
+$Country = $session->country; 
+$State = $session->state;               
+$City = $session->city; 
+$User = $session->user;                 
+$Rol = $session->rol; 
+$Zip = $session->zip;   
+$id = $session->id;
 
 $City = $getLogProp->City;
 $Dwelling = $getLogProp->Dwelling;
@@ -76,33 +76,33 @@ $template="
 
 echo $template;
 ?>
-<form class="row g-3" id="" action="<?php echo base_url(); ?>/public/reserve" method="POST">
+<form class="row g-3" id="" action="<?php echo base_url('/public/addReserve'); ?>" method="POST">
 <div class="row">
   <div class="col-md-3">
        <label for="inputCity" class="form-label">First Name</label>
-    <input type="text" class="form-control" name="firstname" id="firstname" disabled value="<?php echo $getLog->firstname; ?>" aria-label="Firstname">
+    <input type="text" class="form-control" name="firstname" id="firstname"  value="<?php echo $getLog->firstname; ?>" aria-label="Firstname">
   </div>
   <div class="col-md-3">
        <label for="inputCity" class="form-label">Last Name</label>
-    <input type="text" class="form-control" name="lastname" id="lastname" disabled value="<?php echo $getLog->lastname; ?>"  aria-label="Lastname">
+    <input type="text" class="form-control" name="lastname" id="lastname"  value="<?php echo $getLog->lastname; ?>"  aria-label="Lastname">
   </div>
   <div class="col-md-3">
        <label for="inputCity" class="form-label">Property Code</label>
-    <input type="text" class="form-control" name="property_code" id="property_code" value="<?php echo $getLogProp->ID; ?>"  aria-label="IDprop">
+    <input type="text" class="form-control" name="property_code" id="property_code"  value="<?php echo $getLogProp->ID; ?>"  aria-label="IDprop">
   </div>
   <div class="col-md-3">
        <label for="inputCity" class="form-label">Arrival Date</label>
-    <input type="date" class="form-control" name="arrival_date" id="arrival_date" arrival_date" value="arrival_date"  aria-label="date">
+    <input type="date" class="form-control" name="arrival_date" id="arrival_date"  value="arrival_date"  aria-label="date">
   </div>
 </div>
 <div class="row">
   <div class="col-md-3">
        <label for="inputCity" class="form-label">User</label>
-    <input type="text" class="form-control" name="user" id="user" disabled value="<?php echo $getLog->user; ?>" aria-label="Firstname">
+    <input type="text" class="form-control" name="user" id="user"  value="<?php echo $getLog->user; ?>" aria-label="Firstname">
   </div>
   <div class="col-md-3">
        <label for="inputCity" class="form-label">Night Value</label>
-    <input type="text" class="form-control" name="night_value" id="night_value" value="<?php echo $getLogProp->Value; ?>"  aria-label="Lastname">
+    <input type="text" class="form-control" name="night_value" id="night_value"  value="<?php echo $getLogProp->Value; ?>"  aria-label="Lastname">
   </div>
   <div class="col-md-3">
        <label for="inputCity" class="form-label">number of people</label>

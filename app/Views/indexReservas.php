@@ -13,7 +13,7 @@
         foreach($property as $item){
 
            
-            $reservRoute = base_url("/public/readReserve?user={$user}")."";
+            $reservRoute = base_url("/public/readReserve?ID={$item->ID}")."";
             $template="
      
 

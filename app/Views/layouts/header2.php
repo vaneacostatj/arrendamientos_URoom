@@ -31,7 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?php echo base_url() . '/public'; ?>">Home</a>
+                        <a class="nav-link active" aria-current="page" href="<?php echo base_url().'/public'; ?>">Home</a>
                     </li>
                    
                     <li class="nav-item dropdown">
@@ -39,17 +39,20 @@
                             Zone
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="<?php echo base_url() . '/public/rural'; ?>">Rural</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url() . '/public/urban'; ?>">Urban</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url().'/public/rural'; ?>">Rural</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url().'/public/urban'; ?>">Urban</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="<?php echo base_url().'/public/login'; ?>">Profile</a>
                     </li>
 
                 </ul>
 
-                <form class="row g-3" method="POST" id="" action="<?php echo base_url() . '/public/Home' ?>">
+                <form class="row g-3" method="POST" id="" action="">
                     <div class="col-auto">
                         <label class="h4" id="login2">Welcome</label>&nbsp; &nbsp; &nbsp;
-                        <button type="submit" class="btn btn-outline-warning">Exit</button>&nbsp; &nbsp;
+                        <a href="<?php echo base_url().'/public/singOut' ?>" class='btn btn-outline-warning'>Exit</a>                        
                     </div>
                 </form>
 
