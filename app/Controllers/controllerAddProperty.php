@@ -215,7 +215,7 @@ class controllerAddProperty extends BaseController
 
 
 		$propertyModel->addProperty($document, $city, $country, $address, $rooms, $bathrooms, $area, $gas, $transport, $location, $value, $photos, $Dwelling, $Zone);
-		return redirect()->to('/public/addProperty');
+		return redirect()->to('/public/login');
 
 		
 	}
@@ -283,6 +283,6 @@ class controllerAddProperty extends BaseController
 		$Zone = $request-> getPost('Zone');
 
 		$propertyModel->updateEditedProperty($ID, $document, $city, $country, $address, $rooms, $bathrooms, $area, $gas, $transport, $location, $value, $photos, $Dwelling, $Zone);
-		return redirect()->to('/public/addProperty');
+		return redirect()->to('/public/login');
 	}
 }

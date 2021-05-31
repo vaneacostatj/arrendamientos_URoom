@@ -11,7 +11,7 @@
 
                 if ($item->Zone == "Rural") {
 
-                    $Reserve = base_url() . "/public/indexReservas?ID={$item->ID}";
+                    $Reserve = base_url()."/public/readReserve?user={$User}";
 
                     $template = "                
                 <div class='col-12 col-sm-12 col-md-6 col-lg-4'>

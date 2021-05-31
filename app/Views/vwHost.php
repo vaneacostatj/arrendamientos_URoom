@@ -19,9 +19,10 @@
     $Rol = $getLog->rol; 
     $Zip = $getLog->zip;   
     $id = $getLog->id;
-
+    $addProperty = base_url() . "/public/addProperty/viewProperty";
     $Reserve = base_url()."/public/indexReservas?user={$User}";
     $updateRoute = base_url()."/public/updateRegister?id={$id}";
+    
     
     $template="
     
@@ -41,6 +42,8 @@
               Zip: {$Zip}             
               </p>
               <a href='{$updateRoute}' class='btn btn-outline-dark'>Update</a>
+              <a href='{$addProperty}' class='btn btn-outline-dark'>Add Property</a>
+             
             </div>
           </div>
         </div>
@@ -59,8 +62,8 @@
 
         $deleteRoute = base_url() . "/public/deleteProperty?ID={$IDprop}";
         $updateRoute = base_url() . "/public/updateProperty?ID={$IDprop}";
-        $addProperty = base_url() . "/public/addProperty/viewProperty";
         
+      
         $template2 = "
         <div class='col-sm-6'>
           <div class='card text-dark bg-light'>
@@ -73,8 +76,7 @@
                             <p class='card-text'>
                             País: {$Country}
                             City: {$City}</br>
-                            Location: {$Location}</br>
-                            Value: {$Location}
+                            Value: {$Value}
                         
                             </p>
                             <a href='https://www.google.com/intl/es-419/gmail/about/' class='btn btn-outline-danger'>Delete request</a>
@@ -85,8 +87,9 @@
                 </div>
             </div>
             
-            <a href='{$addProperty}' class='btn btn-outline-dark'>Add Property</a>
-            <a href='{$Reserve}' class='btn btn-outline-dark'>Reserve</a>
+            
+        
+            
           </div>
           </div>";
 
@@ -105,7 +108,7 @@
      <th scope='col'>Arrival Date</th>
      <th scope='col'>Departure Date</th>
      <th scope='col'>Amount to be Paid</th>
-     <th scope='col'></th>
+     <th scope='col'>Reserve</th>
    </tr>
  </thead>
  <tbody>
@@ -116,7 +119,7 @@
      <td>{$getReserve->arrival_date}</td>
      <td>{$getReserve->departure_date}</td>
      <td>{$total}</td>
-     <td><a href='https://www.google.com/intl/es-419/gmail/about/' class='btn btn-outline-danger'>Delete request</a></td>
+     <td><a href='https://www.google.com/intl/es-419/gmail/about/' class='btn btn-outline-danger'>Delete request</a> <a href='{$Reserve}' class='btn btn-outline-primary'>See More</a></td>
    </tr>
    <tr>
      <th scope='row'>2</th>

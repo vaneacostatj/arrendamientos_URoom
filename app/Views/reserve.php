@@ -36,16 +36,17 @@
 <?php
 /* var_dump($getLogProp);
 var_dump($getLog); */
+$session = session();
+var_dump($session->firstname);
 
-
-$Email = $session->email;               
-$Country = $session->country; 
-$State = $session->state;               
-$City = $session->city; 
-$User = $session->user;                 
-$Rol = $session->rol; 
-$Zip = $session->zip;   
-$id = $session->id;
+$Email = $getLog->email;               
+$Country = $getLog->country; 
+$State = $getLog->state;               
+$City = $getLog->city; 
+$User = $getLog->user;                 
+$Rol = $getLog->rol; 
+$Zip = $getLog->zip;   
+$id = $getLog->id;
 
 $City = $getLogProp->City;
 $Dwelling = $getLogProp->Dwelling;

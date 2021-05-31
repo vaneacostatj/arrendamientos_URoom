@@ -46,7 +46,7 @@ $routes->get('/indexReservas', 'controllerAddProperty::indexReservas');
 $routes->get('/addProperty', 'controllerAddProperty::index');
 $routes->get('/addProperty/viewProperty', 'controllerAddProperty::viewProperty');
 $routes->post('/create', 'controllerAddProperty::create');
-$routes->post('/deleteProperty', 'controllerAddProperty::deleteProperty');
+$routes->get('/deleteProperty', 'controllerAddProperty::deleteProperty');
 $routes->get('/updateProperty', 'controllerAddProperty::updateProperty');
 $routes->post('/updateEdid-Property', 'controllerAddProperty::updateEditedProperty');
 

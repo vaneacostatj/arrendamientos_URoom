@@ -68,7 +68,7 @@ class registerController extends BaseController
 		 $zip = $request-> getPost('zip');
 
 		 
-		 $modelRegister->register($firstname, $lastname, $email, $country, $state, $city, $user, $password, $rol, $zip);
+		 $modelRegister->userregister($firstname, $lastname, $email, $country, $state, $city, $user, $password, $rol, $zip);
 		 return redirect()->to('/public');
  
 		 
@@ -133,7 +133,7 @@ class registerController extends BaseController
 		$zip = $request->getPost('zip');
 
 		$modelRegister->updateRegister($id, $firstname, $lastname, $email, $country, $state, $city, $user, $password, $rol, $zip);
-		return redirect()->to('/public/register');
+		return redirect()->to('/public/login');
 	}
 
 

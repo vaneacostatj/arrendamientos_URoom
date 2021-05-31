@@ -10,7 +10,7 @@
         foreach($property as $item){
 
             if($item->Zone == "Urban"){
-                $Reserve = base_url()."/public/indexReservas?ID={$item->ID}";
+                $Reserve = base_url()."/public/readReserve?user={$User}";
                 $template="
                 <div class='col-12 col-sm-12 col-md-6 col-lg-4'>
                     <div class='card text-white bg-secondary mb-3' style='width: 18rem;'>
